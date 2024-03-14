@@ -2,12 +2,106 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Re Delivery</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header class="head">
+      <div class="head-container container">
+        <nav class="header-nav">
+          <a href="./index.html"><svg
+            class="logo-icon"
+            aria-label="redelivery-icon"
+            width="56"
+            height="42"
+          >
+            <use href="./src/svg/symbol-defs.svg#icon-logo"></use>
+          </svg></a>
+          <button type="button" class="mobile-menu-open-button">
+            <svg
+            class="logo-icon"
+            aria-label="redelivery-icon"
+            width="32"
+            height="32"
+          >
+            <use href="./src/svg/symbol-defs.svg#icon-mobile-menu"></use>
+          </svg>
+        </button>
+        </nav>
+
+        
+      </div>
+
+    </header>
+    <section class="greet-section">
+      <div class="greet-div container">
+        <h1 class="greet-header">Зголодніли?...</h1>
+        <div class="greet-text-container">
+        <p class="greet-text"><span class="orange-text">Re Delivery</span> втамує <br> Ваш голод</p>
+        </div>
+        <button class="greet-menu-btn">Меню</button>
+      </div>
+    </section>
+
+    <section class="advantages">
+      <h2 class="visually-hidden">Переваги</h2>
+
+      <div class="advantages-div container">
+        <ul class="advantages-list">
+          <li class="advantages-list-item">
+            <div class="advantages-icon-box"> 
+            <svg
+            class="advantages-icon"
+            aria-label="redelivery-icon"
+            width="44"
+            height="44"
+            >
+          
+            <use href="./src/svg/symbol-defs.svg#icon-restaurant-outline"></use>
+            </svg>
+            </div>
+            <h3 class="advantages-headers">Гастрономічні враження вдома</h3>
+            <p class="advantages-text">Насолоджуйтеся вишуканими стравами в затишку власного дому</p>
+            
+          </li>
+          <li class="advantages-list-item">
+            <div class="advantages-icon-box"> 
+            <svg
+            class="advantages-icon"
+            aria-label="redelivery-icon"
+            width="44"
+            height="44"
+            >
+            <use href="./src/svg/symbol-defs.svg#icon-discount-star"></use>
+            </svg>
+            </div>
+            <h3 class="advantages-headers">Спеціальні пропозиції</h3>
+            <p class="advantages-text">Ексклюзивні знижки та акції при замовленні на самовивіз</p>
+          </li>
+          <li class="advantages-list-item">
+            <div class="advantages-icon-box"> 
+            <svg
+            class="advantages-icon"
+            aria-label="redelivery-icon"
+            width="42"
+            height="42"
+            >
+            <use href="./src/svg/symbol-defs.svg#icon-hourglass-outline"></use>
+            </svg>
+            </div>
+            <h3 class="advantages-headers">Економія часу</h3>
+            <p class="advantages-text">Смакуйте свої улюблені страви вже через кілька хвилин після замовлення</p>
+          </li>
+        </ul>
+
+      </div>
+      
+
+    </section>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
