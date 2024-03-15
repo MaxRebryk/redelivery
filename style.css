@@ -383,6 +383,7 @@ h3 {
     cursor: pointer;
     background-color: transparent;
     position: absolute;
+    padding: 0;
   }
 
   .recom-like-btn:hover .like-icon{
