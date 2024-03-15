@@ -284,12 +284,28 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 16px;
-    column-gap: 8px;
-    justify-content: center;
+    column-gap: 0px;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
     
   }
 
+  .recom-new{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #EA7B00;
+    width: 50px;
+    height: 24px;
+    padding: 2px;
+    color: #FFFBF9;
+    border-radius: 12px 0px;
+    text-align: center;
+  }
+
   .recom-list-item-container{
+    position: relative;
     width: 171px;
     height: 299px;
     padding-top: 8px;
@@ -354,24 +370,30 @@ h3 {
     height: 24px;
   }
 
+  .like-icon{
+    stroke: #EA7B00;
+    fill: transparent;
+  }
+
   .recom-like-btn{
     width: 24px;
     height: 24px;
     border: none;
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
   }
 
-  .recom-like-btn:hover{
+  .recom-like-btn:hover .like-icon{
     fill: #EA7B00;
+    
   }
   
-  .recom-like-btn:active{
+  .recom-like-btn:active .like-icon{
     fill: #F5A54D;
   }
 
-  .like-icon{
-    stroke: #EA7B00;
-    fill: none;
-  }
+
 
   .recom-menu-btn{
     width: 262px;
