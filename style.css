@@ -97,6 +97,8 @@ h3 {
   .head-container{
     background-color: #0A0601;
     padding-top: 20px;
+    padding-left: 16px;
+    padding-right: 8px;
    
 
     
@@ -113,13 +115,170 @@ h3 {
     background: none;
   }
 
+  .navigate-list{
+    display: none;
+  }
+
+  .leave-comment{
+    display: none;
+  }
+
+  .navigate-buttons-list{
+    display: none;
+  }
+
 }
 
-                   /* Header Section Mobile */
+
+
+                   /* Header Section Desktop */
                    
 
   @media screen and (min-width: 1158px) {
     
+    .container{
+      width: 1280px;
+      margin: 0;
+    }
+    
+
+    .head{
+      padding-top: 32px;
+      width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      height: 52px;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      box-shadow: none;
+    }
+
+
+    .navigate-list{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      width: 440px;
+      height: 44px;
+      border-radius: 24px;
+      background: var(--Accent, #EA7B00);
+      box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
+    }
+
+    .navigate-link{
+      color: var(--Main, #F6F1EE);
+      text-align: center;
+      font-size: 16px;  
+      font-weight: 400;
+      line-height: normal;
+      text-decoration: none;
+      
+    }
+
+    .navigate-link:hover{
+      color: var(--Grey, #414141);
+      width: 81px;
+      height: 28px;
+      padding: 4px 8px;
+      border-radius: 24px;
+      background: var(--Main, #F6F1EE);
+      
+    }
+
+
+    .main-link{
+      color: var(--Grey, #414141);
+      width: 81px;
+      height: 28px;
+      padding: 4px 8px;
+      border-radius: 24px;
+      background: var(--Main, #F6F1EE);
+    }
+
+    .header-nav{
+      display: flex;
+      flex-direction: row;
+      width: 1120px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-icon{
+      width: 71px;
+      height: 52px;
+    }
+
+    .mobile-menu-open-button{
+      display: none;
+    }
+
+    .leave-comment{
+      width: 237px;
+      height: 44px;
+      border-radius: 24px;
+      background: var(--Main, #F6F1EE);
+      box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
+      border: none;
+      color: var(--Accent, #EA7B00);
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: normal;
+      cursor: pointer;
+
+    }
+
+    .leave-comment:hover{
+      background: var(--CTA_Hover, #F5A54D);
+      color: var(--Main, #F6F1EE);
+    }
+
+    .navigate-buttons-list{
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+    }
+
+    .fav-button{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      background-color: var(--Main, #F6F1EE);
+    }
+
+    .cart-button{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      background-color: var(--Main, #F6F1EE);
+    }
+
+    .profile-button{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      background-color: var(--Main, #F6F1EE);
+    }
+
+    .navigate-icon-header{
+      fill: none;
+      stroke: #EA7B00;
+    }
+    
+    .navigate-icon-header:hover{
+      fill: #EA7B00;
+    }
+  
+
   }
 
 
@@ -214,6 +373,8 @@ h3 {
     line-height: normal;
   }
 
+
+
   .mobile-menu-nav{
     padding-top: 16px;
     padding-left: 16px;
@@ -243,6 +404,9 @@ h3 {
 
 @media screen and (max-width:767px){
 
+  .greet-pizza{
+    display: none;
+  }
 
 .greet-section{
   background:  url(./src/img/mobile/greet.jpg) no-repeat;
@@ -290,6 +454,13 @@ h3 {
   line-height: normal;
 }
 
+.greet-main-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .greet-menu-btn{
   width: 262px;
   height: 48px;
@@ -325,6 +496,109 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
   
   }
 }
+
+
+                   /* Greet Section Desktop */
+                   
+
+  @media screen and (min-width: 1158px) {
+
+    .greet-section{
+      padding-top: 143px;
+      padding-left: 80px;
+      position: relative;
+      width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      
+    }
+
+    .greet-div{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      position: relative;
+      
+    }
+
+    .greet-main-content{
+      margin-right: 24px;
+    }
+
+    .greet-header{
+      color: var(--Grey, #414141);
+      font-size: 54px;
+      font-weight: 400;
+      line-height: normal;
+    }
+    .greet-text-container{
+      margin-bottom: 40px;
+    }
+
+    .greet-text{
+      color: var(--Grey, #414141);
+      font-family: Sarabun;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .orange-text{
+      color: var(--Accent, #EA7B00);
+    }
+
+    .greet-menu-btn{
+      width: 262px;
+      height: 48px;
+      border-radius: 40px;
+      background: var(--Accent, #EA7B00);
+      border: none;
+      cursor: pointer;
+      color: var(--White, #FFFBF9);
+      text-align: center;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .greet-menu-btn:hover{
+      background: var(--CTA_Hover, #F5A54D);
+
+
+    }
+
+    .greet-menu-btn:focus{
+      background: var(--CTA_Hover, #F5A54D);
+    }
+
+    .greet-menu-btn:active{
+      background: var(--Orange-Light, #FFD6AA);
+    }
+
+    .greet-pizza{
+      width: 416px;
+      height: 416px;
+      border-radius: 416px;
+      background: var(--Main, #F6F1EE);
+    }
+
+    .greet-background{
+      width: 600px;
+      height: 800px;
+      background: url(./src/img/desktop/desktop-greet-icons.png)  no-repeat;
+      background-size: cover;
+      background-color: #EA7B00;
+      border-radius: 50% 0% 20% 50%;
+      position: absolute;
+      top: 0;
+      z-index: -1;
+      left: 50%;
+      background: url;
+    }
+
+  }
 
 
 

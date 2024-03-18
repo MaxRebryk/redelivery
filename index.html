@@ -11,7 +11,7 @@
   </head>
   <body>
     <header class="head">
-      <div class="head-container container">
+      <div class="head-container">
         <nav class="header-nav">
           <a href="./index.html"><svg
             class="logo-icon"
@@ -21,6 +21,59 @@
           >
             <use href="./src/svg/symbol-defs.svg#icon-logo"></use>
           </svg></a>
+
+          <ul class="navigate-list">
+            <li class="navigate-item " >
+              <a  class="navigate-link main-link" href="">Головна</a>
+            </li>
+            <li class="navigate-item">
+              <a  class="navigate-link" href="">Меню</a>
+            </li>
+            <li class="navigate-item">
+              <a  class="navigate-link" href="">Про нас</a>
+            </li>
+            <li class="navigate-item">
+              <a  class="navigate-link" href="">Відгуки</a>
+            </li>
+            <li class="navigate-item">
+              <a  class="navigate-link" href="">Контакти</a>
+            </li>
+          </ul>
+          <button class="leave-comment" type="button">Залишити відгук</button>
+
+          <ul class="navigate-buttons-list">
+            <li class="navigate-buttons-item">
+              <button class="fav-button" type="button"><svg
+                class="navigate-icon-header"
+                aria-label="like-icon"
+                width="24"
+                height="24"
+                >
+                <use href="./src/svg/symbol-defs.svg#icon-heart-outline"></use>
+                </svg></button>
+            </li>
+            <li class="navigate-buttons-item">
+              <button class="cart-button" type="button"><svg
+                class="navigate-icon-header"
+                aria-label="like-icon"
+                width="24"
+                height="24"
+                >
+                <use href="./src/svg/symbol-defs.svg#icon-cart-outline"></use>
+                </svg></button>
+            </li>
+            <li class="navigate-buttons-item">
+              <button class="profile-button" type="button"><svg
+                class="navigate-icon-header"
+                aria-label="like-icon"
+                width="24"
+                height="24"
+                >
+                <use href="./src/svg/symbol-defs.svg#icon-person-outline"></use>
+                </svg></button>
+            </li>
+          </ul>
+
           <button type="button" class="mobile-menu-open-button">
             <svg
             class="logo-icon"
@@ -37,14 +90,22 @@
       </div>
 
     </header>
+
     <section class="greet-section">
       <div class="greet-div container">
+        <div class="greet-main-content">
         <h1 class="greet-header">Зголодніли?...</h1>
         <div class="greet-text-container">
         <p class="greet-text"><span class="orange-text">Re Delivery</span> втамує <br> Ваш голод</p>
         </div>
         <button class="greet-menu-btn">Меню</button>
       </div>
+        <div class="greet-pizza">
+          <img srcset="./src/img/desktop/capricosa@2x.png" src="./src/img/desktop/capricosa.png" alt="pizza" width="400px" height="400px">
+        </div>
+        
+      </div>
+      <div class="greet-background"></div>
     </section>
 
     <section class="advantages">
