@@ -115,6 +115,15 @@ h3 {
 
 }
 
+                   /* Header Section Mobile */
+                   
+
+  @media screen and (min-width: 1158px) {
+    
+  }
+
+
+
                    /* Menu Mobile */
 
   @media screen and (max-width:767px){
@@ -227,13 +236,16 @@ h3 {
 
 
 
+
+
+
                    /* Greet Section Mobile */
 
 @media screen and (max-width:767px){
 
 
 .greet-section{
-  background:  url(./src/img/greet.jpg) no-repeat;
+  background:  url(./src/img/mobile/greet.jpg) no-repeat;
   width: 390px;
   height: 776px;
   margin-right: auto;
@@ -298,6 +310,20 @@ h3 {
   background: var(--Orange-Light, #FFD6AA);
 }
 
+}
+
+@media screen and (min-resolution: 192dpi) and (max-width: 767px),
+screen and (min-resolution: 2dppx) and (max-width: 767px),
+screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
+  .greet-section{
+    background:  url(./src/img/mobile/greet@2x.jpg) no-repeat;
+    background-size: cover;
+    width: 390px;
+    height: 776px;
+    margin-right: auto;
+    margin-left: auto;
+  
+  }
 }
 
 
@@ -849,6 +875,8 @@ h3 {
 @media screen and (max-width:767px){
 
   .footer-div{
+    background: url(./src/img/mobile/footer-mobile-icons.png)  no-repeat;
+    background-size: cover;
     background-color: #EA7B00;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -887,4 +915,16 @@ h3 {
 
 
 
+}
+
+@media screen and (min-resolution: 192dpi) and (max-width: 767px),
+screen and (min-resolution: 2dppx) and (max-width: 767px),
+screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
+  .footer-div{
+    background: url(./src/img/mobile/footer-mobile-icons@2x.png)  no-repeat;
+    background-size: cover;
+    background-color: #EA7B00;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
