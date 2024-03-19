@@ -516,7 +516,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
       padding-top: 143px;
       padding-left: 80px;
       position: relative;
-      width: 1280px;
+      width: 1200px;
       margin-left: auto;
       margin-right: auto;
       
@@ -594,7 +594,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
     }
 
     .greet-background{
-      width: 600px;
+      width: 575px;
       height: 700px;
       background: url(./src/img/desktop/desktop-greet-icons.png)  no-repeat;
       background-size: cover;
@@ -603,7 +603,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
       position: absolute;
       top: 0;
       z-index: -1;
-      left: 50%;
+      left: 55%;
       background: url;
       overflow: hidden;
     }
@@ -1185,6 +1185,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
     background: url(./src/img/desktop/about-us.jpg)  no-repeat;
     background-image: cover;
     height: 415px;
+    width: 1200px;
   }
 
   .about-img{
