@@ -468,8 +468,7 @@ html{
         line-height: normal;
     }
 
-    .search-input::-webkit-search-cancel-button {
-        -webkit-appearance: none;
+    .search-input::-webkit-appearance {
         display: none;
     }
 
