@@ -17,6 +17,7 @@ let counter = 1;
 const pizza = [
     {
         id: 1,
+        new: true,
         name: "Піца з грушею та сиром Дорблю",
         imgMobile : "../img/mobile/pizza.png",
         imgMobile2x : "../img/mobile/pizza@2x.png",
@@ -26,6 +27,7 @@ const pizza = [
     },
     {
         id: 2,
+        new: false,
         name: "Піца з грушею та сиром Дорблю",
         imgMobile : "../img/mobile/pizza.png",
         imgMobile2x : "../img/mobile/pizza@2x.png",
@@ -35,6 +37,7 @@ const pizza = [
     },
     {
         id: 3,
+        new: false,
         name: "Піца з грушею та сиром Дорблю",
         imgMobile : "../img/mobile/pizza.png",
         imgMobile2x : "../img/mobile/pizza@2x.png",
@@ -44,6 +47,7 @@ const pizza = [
     },
     {
         id: 4,
+        new: false,
         name: "Піца з грушею та сиром Дорблю",
         imgMobile : "../img/mobile/pizza.png",
         imgMobile2x : "../img/mobile/pizza@2x.png",
@@ -56,6 +60,7 @@ const pizza = [
 const burgers = [
     {
         id: 5,
+        new: true,
         name: "Бургер з яловичиною",
         imgMobile : "../img/mobile/burger.png",
         imgMobile2x : "../img/mobile/burger@2x.png",
@@ -65,6 +70,7 @@ const burgers = [
     },
     {
         id: 6,
+        new: false,
         name: "Бургер з яловичиною",
         imgMobile : "../img/mobile/burger.png",
         imgMobile2x : "../img/mobile/burger@2x.png",
@@ -74,6 +80,7 @@ const burgers = [
     },
     {
         id: 7,
+        new: false,
         name: "Бургер з яловичиною",
         imgMobile : "../img/mobile/burger.png",
         imgMobile2x : "../img/mobile/burger@2x.png",
@@ -83,6 +90,7 @@ const burgers = [
     },
     {
         id: 8,
+        new: false,
         name: "Бургер з яловичиною",
         imgMobile : "../img/mobile/burger.png",
         imgMobile2x : "../img/mobile/burger@2x.png",
@@ -95,6 +103,7 @@ const burgers = [
 const pita = [
     {
         id: 9,
+        new: true,
         name: "Піта з яловичиною",
         imgMobile : "../img/mobile/pita.png",
         imgMobile2x : "../img/mobile/pita@2x.png",
@@ -104,6 +113,7 @@ const pita = [
     },
     {
         id: 10,
+        new: false,
         name: "Піта з яловичиною",
         imgMobile : "../img/mobile/pita.png",
         imgMobile2x : "../img/mobile/pita@2x.png",
@@ -113,6 +123,7 @@ const pita = [
     },
     {
         id: 11,
+        new: false,
         name: "Піта з яловичиною",
         imgMobile : "../img/mobile/pita.png",
         imgMobile2x : "../img/mobile/pita@2x.png",
@@ -122,6 +133,7 @@ const pita = [
     },
     {
         id: 12,
+        new: false,
         name: "Піта з яловичиною",
         imgMobile : "../img/mobile/pita.png",
         imgMobile2x : "../img/mobile/pita@2x.png",
@@ -192,6 +204,11 @@ function changeCategoryMenu(btn){
       </li>`
       
       menu.insertAdjacentHTML("beforeend", markup);
+      if(item.new){
+        const menuListItemContainer = document.querySelector(".menu-list-item-container");
+        const newMarkup = `<span class="menu-new">New</span>`
+        menuListItemContainer.insertAdjacentHTML("afterbegin", newMarkup);
+      }
         })
     }
     if (categoryMenuBurgerBtn.classList.contains("is-active")){
@@ -234,6 +251,11 @@ function changeCategoryMenu(btn){
       </li>`
       
       menu.insertAdjacentHTML("beforeend", markup);
+      if(item.new){
+        const menuListItemContainer = document.querySelector(".menu-list-item-container");
+        const newMarkup = `<span class="menu-new">New</span>`
+        menuListItemContainer.insertAdjacentHTML("afterbegin", newMarkup);
+      }
         })
 
     }
@@ -277,6 +299,11 @@ function changeCategoryMenu(btn){
       </li>`
       
       menu.insertAdjacentHTML("beforeend", markup);
+      if(item.new){
+        const menuListItemContainer = document.querySelector(".menu-list-item-container");
+        const newMarkup = `<span class="menu-new">New</span>`
+        menuListItemContainer.insertAdjacentHTML("afterbegin", newMarkup);
+      }
         })
 
     }
