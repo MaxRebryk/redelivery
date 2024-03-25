@@ -12,6 +12,7 @@ const menu = document.querySelector(".menu-list");
 const modalMenuCloseBtn = document.querySelector(".close-modal-menu-btn");
 const backdrop = document.querySelector(".backdrop");
 let menuAddItemButtons = document.querySelectorAll(".menu-list-item-add-button");
+let counter = 1;
 
 const pizza = [
     {
@@ -356,10 +357,13 @@ categoryMenuUl.addEventListener("click" , (event) =>{
 });
 
 
+
 modalMenuCloseBtn.addEventListener("click", (event) => {
   console.log("close");
   togleMobileMenu(backdrop);
   document.body.style.overflow = "auto";
+  counter = 1;
+  itemsCounter.innerHTML = counter;
 });
 
 menuAddItemButtons.forEach(button => {
@@ -372,7 +376,7 @@ menuAddItemButtons.forEach(button => {
 const countPlusBtn = document.querySelector(".modal-count-plus-btn");
 const countMinusBtn = document.querySelector(".modal-count-minus-btn");
 const itemsCounter = document.querySelector(".counter");
-let counter = 1;
+
 
 countPlusBtn.addEventListener("click", (event) => {
   itemsCounter.innerHTML = "";
