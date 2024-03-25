@@ -465,7 +465,6 @@ categoryMenuUl.addEventListener("click" , (event) =>{
 
 
 modalMenuCloseBtn.addEventListener("click", (event) => {
-  console.log("close");
   togleMobileMenu(backdrop);
   document.body.style.overflow = "auto";
   counter = 1;
