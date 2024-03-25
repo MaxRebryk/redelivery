@@ -25,6 +25,7 @@ const pizza = [
         imgDesktop2x : "../img/desktop/grusha@2x.png",
         price: "165"
     },
+    
     {
         id: 2,
         new: false,
