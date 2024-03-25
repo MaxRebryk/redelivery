@@ -363,19 +363,19 @@ function findItemByText(text) {
   const matchingItems = [];
   
   pizza.forEach(item => {
-    if (item.name.toLowerCase().includes(textLowerCase)) {
+    if (item.name.toLowerCase().trim().includes(textLowerCase)) {
       matchingItems.push(item);
     }
   });
 
   burgers.forEach(item => {
-    if (item.name.toLowerCase().includes(textLowerCase)) {
+    if (item.name.toLowerCase().trim().includes(textLowerCase)) {
       matchingItems.push(item);
     }
   });
 
   pita.forEach(item => {
-    if (item.name.toLowerCase().includes(textLowerCase)) {
+    if (item.name.toLowerCase().trim().includes(textLowerCase)) {
       matchingItems.push(item);
     }
   });
