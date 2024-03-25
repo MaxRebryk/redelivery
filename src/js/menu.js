@@ -507,5 +507,16 @@ searchInput.addEventListener("input", (event) => {
   categoryMenuPitaBtn.classList.remove("is-active");
   const matchingItems = findItemByText(text); // Отримання відповідних елементів
   renderSearchResults(matchingItems);
+  menuAddItemButtons = document.querySelectorAll(".menu-list-item-add-button");
+  menuAddItemButtons.forEach(button => {
+    button.addEventListener("click", (event) => {
+        const itemId = button.getAttribute("data-info");
+        displayItemModal(itemId);
+        togleMobileMenu(backdrop);
+        document.body.style.overflow = "hidden"; 
 
-})
+    
+  })});
+
+
+});
