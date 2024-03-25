@@ -1118,10 +1118,14 @@ html{
 }
 
 .modal-count-minus-btn{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 5px;
-  width: 22px;
-  height: 25px; 
+  width: 20px;
+  height: 20px; 
   background: var(--Main, #F6F1EE);
   box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
   color: var(--Grey, #414141);
@@ -1129,13 +1133,18 @@ html{
   font-size: 16px;
   font-weight: 400;
   line-height: normal;
+  padding: 0;
 }
 
 .modal-count-plus-btn{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 5px;
-  width: 22px;
-  height: 25px; 
+  width: 20px;
+  height: 20px; 
   background: var(--Main, #F6F1EE);
   box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
   color: var(--Grey, #414141);
@@ -1143,6 +1152,7 @@ html{
   font-size: 16px;
   font-weight: 400;
   line-height: normal;
+  padding: 0;
 }
 
 .modal-main-buttons-container{
@@ -1190,7 +1200,7 @@ html{
 }
 
 .modal-menu--add-button{
-  width: 151px;
+  width: 159px;
   height: 44px;
   border: none;
   background-color: #EA7B00;
