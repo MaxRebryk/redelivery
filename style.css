@@ -152,23 +152,33 @@ h3 {
 
     .head{
       padding-top: 32px;
-      width: 1120px;
+      width: 1280px;
       margin: 0 auto;
       display: flex;
-      height: 52px;
+      height: 84px;
       justify-content: center;
       align-items: center;
       border: none;
       box-shadow: none;
       position: relative;
+      
+      
      
     }
 
+    
     .head-container{
+      width: 1281px;
+      height: 84px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
       position: fixed;
-      top: 10px;
-     
+      top: 0;
       z-index: 999999;
+      background: var(--Main, #F6F1EE);
+      
     }
 
 
@@ -260,12 +270,14 @@ h3 {
     }
 
     .fav-button{
+      position: relative;
       width: 40px;
       height: 40px;
       border-radius: 50%;
       border: none;
       cursor: pointer;
       background-color: var(--Main, #F6F1EE);
+      box-shadow: 0px 2px 5px 0px rgba(79, 74, 69, 0.25);
     }
 
     .fav-button:hover{
@@ -274,12 +286,14 @@ h3 {
     }
 
     .cart-button{
+      position: relative;
       width: 40px;
       height: 40px;
       border-radius: 50%;
       border: none;
       cursor: pointer;
       background-color: var(--Main, #F6F1EE);
+      box-shadow: 0px 2px 5px 0px rgba(79, 74, 69, 0.25);
     }
 
     .cart-button:hover{
@@ -288,12 +302,14 @@ h3 {
     }
 
     .profile-button{
+      position: relative;
       width: 40px;
       height: 40px;
       border-radius: 50%;
       border: none;
       cursor: pointer;
       background-color: var(--Main, #F6F1EE);
+      box-shadow: 0px 2px 5px 0px rgba(79, 74, 69, 0.25);
     }
 
     .profile-button:hover{
@@ -304,6 +320,9 @@ h3 {
     .navigate-icon-header{
       fill: none;
       stroke: #EA7B00;
+      position: absolute;
+      top: 20%;
+      left: 22%;
     }
 
     .navigate-icon-header:hover{
@@ -376,7 +395,7 @@ h3 {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    margin-top: 40px;
+    margin-top: 10px;
     
   }
 
@@ -623,7 +642,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
       position: absolute;
       top: 0;
       z-index: -1;
-      left: 55%;
+      left: 55.4%;
       background: url;
       overflow: hidden;
     }
@@ -1205,7 +1224,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
     background: url(./src/img/desktop/about-us.jpg)  no-repeat;
     background-image: cover;
     height: 415px;
-    width: 1200px;
+    width: 1280px;
   }
 
   .about-img{

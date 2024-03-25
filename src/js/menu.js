@@ -1,6 +1,6 @@
 "use strict"
 
-
+const mobileMenu = document.querySelector(".modal-mobile-menu");
 const mobileMenuOpenBtn = document.querySelector(".mobile-menu-open-button");
 const mobileMenuCloseBtn = document.querySelector(".close-mobile-menu-btn");
 const categoryMenuPizzaBtn = document.querySelector(".category-pizza-btn");
@@ -9,9 +9,13 @@ const categoryMenuPitaBtn = document.querySelector(".category-pita-btn");
 const categoryMenuUl = document.querySelector(".menu-category-ul");
 const menuHeader = document.querySelector(".menu-header");
 const menu = document.querySelector(".menu-list");
+const modalMenuCloseBtn = document.querySelector(".close-modal-menu-btn");
+const backdrop = document.querySelector(".backdrop");
+let menuAddItemButtons = document.querySelectorAll(".menu-list-item-add-button");
 
 const pizza = [
     {
+        id: 1,
         name: "Піца з грушею та сиром Дорблю",
         imgMobile : "../img/mobile/pizza.png",
         imgMobile2x : "../img/mobile/pizza@2x.png",
@@ -20,6 +24,7 @@ const pizza = [
         price: "165"
     },
     {
+        id: 2,
         name: "Піца з грушею та сиром Дорблю",
         imgMobile : "../img/mobile/pizza.png",
         imgMobile2x : "../img/mobile/pizza@2x.png",
@@ -28,6 +33,7 @@ const pizza = [
         price: "165"
     },
     {
+        id: 3,
         name: "Піца з грушею та сиром Дорблю",
         imgMobile : "../img/mobile/pizza.png",
         imgMobile2x : "../img/mobile/pizza@2x.png",
@@ -36,6 +42,7 @@ const pizza = [
         price: "165"
     },
     {
+        id: 4,
         name: "Піца з грушею та сиром Дорблю",
         imgMobile : "../img/mobile/pizza.png",
         imgMobile2x : "../img/mobile/pizza@2x.png",
@@ -47,6 +54,7 @@ const pizza = [
 
 const burgers = [
     {
+        id: 5,
         name: "Бургер з яловичиною",
         imgMobile : "../img/mobile/burger.png",
         imgMobile2x : "../img/mobile/burger@2x.png",
@@ -55,6 +63,7 @@ const burgers = [
         price: "200"
     },
     {
+        id: 6,
         name: "Бургер з яловичиною",
         imgMobile : "../img/mobile/burger.png",
         imgMobile2x : "../img/mobile/burger@2x.png",
@@ -63,6 +72,7 @@ const burgers = [
         price: "200"
     },
     {
+        id: 7,
         name: "Бургер з яловичиною",
         imgMobile : "../img/mobile/burger.png",
         imgMobile2x : "../img/mobile/burger@2x.png",
@@ -71,6 +81,7 @@ const burgers = [
         price: "200"
     },
     {
+        id: 8,
         name: "Бургер з яловичиною",
         imgMobile : "../img/mobile/burger.png",
         imgMobile2x : "../img/mobile/burger@2x.png",
@@ -82,6 +93,7 @@ const burgers = [
 
 const pita = [
     {
+        id: 9,
         name: "Піта з яловичиною",
         imgMobile : "../img/mobile/pita.png",
         imgMobile2x : "../img/mobile/pita@2x.png",
@@ -90,6 +102,7 @@ const pita = [
         price: "85"
     },
     {
+        id: 10,
         name: "Піта з яловичиною",
         imgMobile : "../img/mobile/pita.png",
         imgMobile2x : "../img/mobile/pita@2x.png",
@@ -98,6 +111,7 @@ const pita = [
         price: "85"
     },
     {
+        id: 11,
         name: "Піта з яловичиною",
         imgMobile : "../img/mobile/pita.png",
         imgMobile2x : "../img/mobile/pita@2x.png",
@@ -106,6 +120,7 @@ const pita = [
         price: "85"
     },
     {
+        id: 12,
         name: "Піта з яловичиною",
         imgMobile : "../img/mobile/pita.png",
         imgMobile2x : "../img/mobile/pita@2x.png",
@@ -117,10 +132,8 @@ const pita = [
 
 
 
-function togleMobileMenu (){
-    const mobileMenu = document.querySelector(".modal-mobile-menu");
-    mobileMenu.classList.toggle("is-open");
-    document.body.style.overflow = "hidden"; 
+function togleMobileMenu (obj){
+    obj.classList.toggle("is-open");
 }
 
 function togleActiveButton(btn) {
@@ -173,7 +186,7 @@ function changeCategoryMenu(btn){
         </picture>
         <h3 class="menu-list-item-header">${item.name}</h3>
         <p class="menu-list-item-price">${item.price} грн</p>
-        <button class="menu-list-item-add-button" type="button">Додати</button>
+        <button class="menu-list-item-add-button" type="button" data-info="${item.id}">Додати</button>
         </div>
       </li>`
       
@@ -215,7 +228,7 @@ function changeCategoryMenu(btn){
         </picture>
         <h3 class="menu-list-item-header">${item.name}</h3>
         <p class="menu-list-item-price">${item.price} грн</p>
-        <button class="menu-list-item-add-button" type="button">Додати</button>
+        <button class="menu-list-item-add-button" type="button" data-info="${item.id}">Додати</button>
         </div>
       </li>`
       
@@ -258,7 +271,7 @@ function changeCategoryMenu(btn){
         </picture>
         <h3 class="menu-list-item-header">${item.name}</h3>
         <p class="menu-list-item-price">${item.price} грн</p>
-        <button class="menu-list-item-add-button" type="button">Додати</button>
+        <button class="menu-list-item-add-button" type="button" data-info="${item.id}">Додати</button>
         </div>
       </li>`
       
@@ -268,10 +281,61 @@ function changeCategoryMenu(btn){
     }
 }
 
+function getItemById(itemId) {
+  const itemFromPizza = pizza.find(item => item.id === parseInt(itemId));
+  const itemFromBurgers = burgers.find(item => item.id === parseInt(itemId));
+  const itemFromPita = pita.find(item => item.id === parseInt(itemId));
+  if (itemFromPizza) return itemFromPizza;
+  if (itemFromBurgers) return itemFromBurgers;
+  if (itemFromPita) return itemFromPita;
+};
 
-mobileMenuOpenBtn.addEventListener("click", togleMobileMenu);
+function displayItemModal(itemId) {
+  const modalContent = document.querySelector(".modal-content");
+  // Отримання об'єкта з відповідним id
+  const item = getItemById(itemId);
+  
+  // Відображення інформації про об'єкт у модальному вікні
+ 
+  const markup = `
+    <picture>
+      <source
+         srcset="
+              ${item.imgDesktop} 1x,
+              ${item.imgDesktop2x} 2x
+            "
+        media="(min-width:1158px)"
+        height="300"
+        width="360"
+      />
+   
+      <source
+        srcset="${item.imgMobile2x} 2x"
+        media="(max-width: 767px)"
+        width="200"
+        height="200"
+      />
+      <img class="menu-img"src="${item.imgMobile}" alt="pizza" width="200" height="200">
+    </picture>
+    <h2 class="modal-menu-header">${item.name}</h2>
+    <p class="modal-menu-price">${item.price} грн</p>
+    <p class="modal-menu-describe">Шинка, маслини, шампіньйони, помідори, сир Моцарела, соус бешамель</p>
+`;
+
+modalContent.innerHTML="";
+modalContent.insertAdjacentHTML("afterbegin", markup);
+
+}
+
+
+
+
+mobileMenuOpenBtn.addEventListener("click",(event) =>{
+  togleMobileMenu(mobileMenu);
+  document.body.style.overflow = "hidden"; 
+});
 mobileMenuCloseBtn.addEventListener("click",(event) =>{
-    togleMobileMenu();
+    togleMobileMenu(mobileMenu);
     document.body.style.overflow = "auto";
 });
 
@@ -279,4 +343,47 @@ categoryMenuUl.addEventListener("click" , (event) =>{
     const btn = event.target;
     togleActiveButton(btn);
     changeCategoryMenu(btn);
+    menuAddItemButtons = document.querySelectorAll(".menu-list-item-add-button");
+    menuAddItemButtons.forEach(button => {
+      button.addEventListener("click", (event) => {
+          const itemId = button.getAttribute("data-info");
+          displayItemModal(itemId);
+          togleMobileMenu(backdrop);
+          document.body.style.overflow = "hidden"; 
+ 
+      
+    })});
+});
+
+
+modalMenuCloseBtn.addEventListener("click", (event) => {
+  console.log("close");
+  togleMobileMenu(backdrop);
+  document.body.style.overflow = "auto";
+});
+
+menuAddItemButtons.forEach(button => {
+  button.addEventListener("click", (event) => {
+      togleMobileMenu(backdrop);
+      document.body.style.overflow = "hidden"; 
+  });
+});
+
+const countPlusBtn = document.querySelector(".modal-count-plus-btn");
+const countMinusBtn = document.querySelector(".modal-count-minus-btn");
+const itemsCounter = document.querySelector(".counter");
+let counter = 1;
+
+countPlusBtn.addEventListener("click", (event) => {
+  itemsCounter.innerHTML = "";
+  counter +=1;
+  itemsCounter.innerHTML = counter;
+})
+
+countMinusBtn.addEventListener("click",(event) => {
+  if(counter > 1){
+    counter -=1;
+    itemsCounter.innerHTML = counter;
+  }
+ 
 })
