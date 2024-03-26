@@ -1,5 +1,7 @@
 "use strict"
 
+import { pizza, burgers, pita } from './menu-list.js';
+
 const mobileMenu = document.querySelector(".modal-mobile-menu");
 const mobileMenuOpenBtn = document.querySelector(".mobile-menu-open-button");
 const mobileMenuCloseBtn = document.querySelector(".close-mobile-menu-btn");
@@ -14,138 +16,6 @@ const backdrop = document.querySelector(".backdrop");
 const searchInput = document.querySelector(".search-input");
 let menuAddItemButtons = document.querySelectorAll(".menu-list-item-add-button");
 let counter = 1;
-
-const pizza = [
-    {
-        id: 1,
-        new: true,
-        name: "Піца з грушею та сиром Дорблю",
-        imgMobile : "../img/mobile/pizza.png",
-        imgMobile2x : "../img/mobile/pizza@2x.png",
-        imgDesktop : "../img/desktop/grusha.png",
-        imgDesktop2x : "../img/desktop/grusha@2x.png",
-        price: "165"
-    },
-    
-    {
-        id: 2,
-        new: false,
-        name: "Піца з грушею та сиром Дорблю",
-        imgMobile : "../img/mobile/pizza.png",
-        imgMobile2x : "../img/mobile/pizza@2x.png",
-        imgDesktop : "../img/desktop/grusha.png",
-        imgDesktop2x : "../img/desktop/grusha@2x.png",
-        price: "165"
-    },
-    {
-        id: 3,
-        new: false,
-        name: "Піца з грушею та сиром Дорблю",
-        imgMobile : "../img/mobile/pizza.png",
-        imgMobile2x : "../img/mobile/pizza@2x.png",
-        imgDesktop : "../img/desktop/grusha.png",
-        imgDesktop2x : "../img/desktop/grusha@2x.png",
-        price: "165"
-    },
-    {
-        id: 4,
-        new: false,
-        name: "Піца з грушею та сиром Дорблю",
-        imgMobile : "../img/mobile/pizza.png",
-        imgMobile2x : "../img/mobile/pizza@2x.png",
-        imgDesktop : "../img/desktop/grusha.png",
-        imgDesktop2x : "../img/desktop/grusha@2x.png",
-        price: "165"
-    }
-];
-
-const burgers = [
-    {
-        id: 5,
-        new: true,
-        name: "Бургер з яловичиною",
-        imgMobile : "../img/mobile/burger.png",
-        imgMobile2x : "../img/mobile/burger@2x.png",
-        imgDesktop : "../img/desktop/grusha.png",
-        imgDesktop2x : "../img/desktop/grusha@2x.png",
-        price: "200"
-    },
-    {
-        id: 6,
-        new: false,
-        name: "Бургер з яловичиною",
-        imgMobile : "../img/mobile/burger.png",
-        imgMobile2x : "../img/mobile/burger@2x.png",
-        imgDesktop : "../img/desktop/grusha.png",
-        imgDesktop2x : "../img/desktop/grusha@2x.png",
-        price: "200"
-    },
-    {
-        id: 7,
-        new: false,
-        name: "Бургер з яловичиною",
-        imgMobile : "../img/mobile/burger.png",
-        imgMobile2x : "../img/mobile/burger@2x.png",
-        imgDesktop : "../img/desktop/grusha.png",
-        imgDesktop2x : "../img/desktop/grusha@2x.png",
-        price: "200"
-    },
-    {
-        id: 8,
-        new: false,
-        name: "Бургер з яловичиною",
-        imgMobile : "../img/mobile/burger.png",
-        imgMobile2x : "../img/mobile/burger@2x.png",
-        imgDesktop : "../img/desktop/grusha.png",
-        imgDesktop2x : "../img/desktop/grusha@2x.png",
-        price: "200"
-    }
-];
-
-const pita = [
-    {
-        id: 9,
-        new: true,
-        name: "Піта з яловичиною",
-        imgMobile : "../img/mobile/pita.png",
-        imgMobile2x : "../img/mobile/pita@2x.png",
-        imgDesktop : "../img/desktop/grusha.png",
-        imgDesktop2x : "../img/desktop/grusha@2x.png",
-        price: "85"
-    },
-    {
-        id: 10,
-        new: false,
-        name: "Піта з яловичиною",
-        imgMobile : "../img/mobile/pita.png",
-        imgMobile2x : "../img/mobile/pita@2x.png",
-        imgDesktop : "../img/desktop/grusha.png",
-        imgDesktop2x : "../img/desktop/grusha@2x.png",
-        price: "85"
-    },
-    {
-        id: 11,
-        new: false,
-        name: "Піта з яловичиною",
-        imgMobile : "../img/mobile/pita.png",
-        imgMobile2x : "../img/mobile/pita@2x.png",
-        imgDesktop : "../img/desktop/grusha.png",
-        imgDesktop2x : "../img/desktop/grusha@2x.png",
-        price: "85"
-    },
-    {
-        id: 12,
-        new: false,
-        name: "Піта з яловичиною",
-        imgMobile : "../img/mobile/pita.png",
-        imgMobile2x : "../img/mobile/pita@2x.png",
-        imgDesktop : "../img/desktop/grusha.png",
-        imgDesktop2x : "../img/desktop/grusha@2x.png",
-        price: "85"
-    }
-];
-
-
 
 function togleMobileMenu (obj){
     obj.classList.toggle("is-open");
@@ -199,8 +69,10 @@ function changeCategoryMenu(btn){
           />
           <img class="menu-img" src="${item.imgMobile}" alt="pizza">
         </picture>
+        <div class="list-item-textcontent-container">
         <h3 class="menu-list-item-header">${item.name}</h3>
         <p class="menu-list-item-price">${item.price} грн</p>
+        </div>
         <button class="menu-list-item-add-button" type="button" data-info="${item.id}">Додати</button>
         </div>
       </li>`
@@ -246,8 +118,10 @@ function changeCategoryMenu(btn){
           />
           <img class="menu-img" src="${item.imgMobile}" alt="pizza">
         </picture>
+        <div class="list-item-textcontent-container">
         <h3 class="menu-list-item-header">${item.name}</h3>
         <p class="menu-list-item-price">${item.price} грн</p>
+        </div>
         <button class="menu-list-item-add-button" type="button" data-info="${item.id}">Додати</button>
         </div>
       </li>`
@@ -295,8 +169,10 @@ function changeCategoryMenu(btn){
           />
           <img class="menu-img" src="${item.imgMobile}" alt="pizza">
         </picture>
+        <div class="list-item-textcontent-container">
         <h3 class="menu-list-item-header">${item.name}</h3>
         <p class="menu-list-item-price">${item.price} грн</p>
+        </div>
         <button class="menu-list-item-add-button" type="button" data-info="${item.id}">Додати</button>
         </div>
       </li>`
@@ -330,7 +206,7 @@ function displayItemModal(itemId) {
   // Відображення інформації про об'єкт у модальному вікні
  
   const markup = `
-    <picture>
+    <picture class="modal-menu-img">
       <source
          srcset="
               ${item.imgDesktop} 1x,
@@ -347,7 +223,7 @@ function displayItemModal(itemId) {
         width="200"
         height="200"
       />
-      <img class="menu-img"src="${item.imgMobile}" alt="pizza" width="200" height="200">
+      <img class="modal-menu-img"src="${item.imgMobile}" alt="pizza" width="200" height="200">
     </picture>
     <h2 class="modal-menu-header">${item.name}</h2>
     <p class="modal-menu-price">${item.price} грн</p>
@@ -418,8 +294,10 @@ function renderSearchResults(resultArray){
         />
         <img class="menu-img" src="${item.imgMobile}" alt="pizza">
       </picture>
+      <div class="list-item-textcontent-container">
       <h3 class="menu-list-item-header">${item.name}</h3>
       <p class="menu-list-item-price">${item.price} грн</p>
+      </div>
       <button class="menu-list-item-add-button" type="button" data-info="${item.id}">Додати</button>
       </div>
     </li>`
@@ -446,20 +324,21 @@ mobileMenuCloseBtn.addEventListener("click",(event) =>{
     document.body.style.overflow = "auto";
 });
 
-categoryMenuUl.addEventListener("click" , (event) =>{
-    const btn = event.target;
-    togleActiveButton(btn);
-    changeCategoryMenu(btn);
-    menuAddItemButtons = document.querySelectorAll(".menu-list-item-add-button");
-    menuAddItemButtons.forEach(button => {
-      button.addEventListener("click", (event) => {
-          const itemId = button.getAttribute("data-info");
-          displayItemModal(itemId);
-          togleMobileMenu(backdrop);
-          document.body.style.overflow = "hidden"; 
- 
-      
-    })});
+categoryMenuUl.addEventListener("click", (event) => {
+  const targetButton = event.target;
+  if (targetButton.tagName === "BUTTON") {
+      togleActiveButton(targetButton);
+      changeCategoryMenu(targetButton);
+      const menuAddItemButtons = document.querySelectorAll(".menu-list-item-add-button");
+      menuAddItemButtons.forEach(button => {
+          button.addEventListener("click", (event) => {
+              const itemId = button.getAttribute("data-info");
+              displayItemModal(itemId);
+              togleMobileMenu(backdrop);
+              document.body.style.overflow = "hidden";
+          });
+      });
+  }
 });
 
 
@@ -495,7 +374,8 @@ countMinusBtn.addEventListener("click",(event) => {
     itemsCounter.innerHTML = counter;
   }
  
-})
+});
+
 
 searchInput.addEventListener("input", (event) => {
 
@@ -519,3 +399,22 @@ searchInput.addEventListener("input", (event) => {
 
 
 });
+
+
+
+document.addEventListener("DOMContentLoaded", (event) =>{
+  menuAddItemButtons = document.querySelectorAll(".menu-list-item-add-button");
+  menuAddItemButtons.forEach(button => {
+    button.addEventListener("click", (event) => {
+        const itemId = button.getAttribute("data-info");
+        displayItemModal(itemId);
+        togleMobileMenu(backdrop);
+        document.body.style.overflow = "hidden";
+    });
+  });
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", changeCategoryMenu(categoryMenuPizzaBtn));

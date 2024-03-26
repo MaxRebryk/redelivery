@@ -1989,7 +1989,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
     
     .footer-ul-header{
       color: var(--White, #FFFBF9);
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 400;
       line-height: normal;
       margin-bottom: 24px;
