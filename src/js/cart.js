@@ -14,6 +14,7 @@ const maxTipsBtn = document.querySelector(".tips-fifteen-button");
 const fullPrice = document.querySelector(".full-price");
 const tipsPrice = document.querySelector(".tips-price");
 const dishesPrice = document.querySelector(".dishes-price");
+const backMenuBtn = document.querySelector(".back-menu-btn");
 let totalOrderPrice = 0;
   
 
@@ -170,4 +171,4 @@ cleanOrderBtn.addEventListener("click", (event) =>{
     dishesPrice.textContent = `0 грн`;
 })
 
-  
+backMenuBtn.addEventListener("click", (event) => {history.back()});
