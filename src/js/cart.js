@@ -156,9 +156,6 @@ tipsButtonsUl.addEventListener("click", (event) => {
 
         calculatePrice();
     }
-  
-
-
     fullPrice.textContent = totalOrderPrice + 50 + tips + " грн";
   });
 
