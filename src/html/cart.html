@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/cart.css">
     <title>Menu</title>
   </head>
   <body>
@@ -95,184 +95,146 @@
   
       </header>
 
+
       
-     <!-- /* Search Section */ -->
 
-      <section class="search">
-        <div class="search-container container">
-        <form action="search" class="search-form">
-            <input class="search-input" type="search" placeholder="Пошук страви">
-            <svg
-              class="search-icon"
-              aria-label="search"
-              width="24"
-              height="24"
-            >
-              <use href="../svg/symbol-defs.svg#icon-search-outline"></use>
-            </svg>
-        </form>
-        <ul class="menu-category-ul">
-            <li class="category-item"><button class="category-pizza-btn is-active">Піца</button></li>
-            <li class="category-item"><button class="category-burger-btn">Бургер</button></li>
-            <li class="category-item"><button class="category-pita-btn">Піта</button></li>
-         </ul>
-    </div>
-    
-      </section>
+      
+     <!-- /* Order Section */ -->
 
-     <!-- /* Main-Menu Section*/ -->
-
-     <section class="menu-section">
-        <h2 class="menu-header">Уся піца</h2>
-        <div class="menum-div ">
-          <ul class="menu-list">
-            <li class="menu-list-item">
-              <div class="menu-list-item-container">
-                <span class="menu-new">New</span>
-                <div class="svg-like-container">
-                <button class="menu-like-btn" type="button"><svg
-              class="like-icon"
-              aria-label="like-icon"
-              width="24"
-              height="24"
-              >
-              <use href="../svg/symbol-defs.svg#icon-heart-outline"></use>
-              </svg></button>
+    <section class="order-section">
+        <div class="order-container container">
+            <div class="back-menu-btn-container">
+                <button class="back-menu-btn" type="button"><svg
+                class="back-menu-btn-svg"
+                aria-label="back-arrow"
+                width="32"
+                height="32"
+                >
+                <use href="../svg/symbol-defs.svg#icon-arrow-forward-circle-outline"></use>
+                </svg>
+                </button>
             </div>
-              <picture>
-                <source
-                  srcset="
-                    ../img/desktop/grusha.png 1x,
-                    ../img/desktop/grusha@2x.png 2x
-                  "
-                  media="(min-width:1158px)"
-                  height="300"
-                  width="360"
-                />
-             
-                <source
-                  srcset="../img/mobile/pizza@2x.png 2x"
-                  media="(max-width: 767px)"
-                />
-                <img class="menu-img" src="../img/mobile/pizza.png" alt="pizza">
-              </picture>
-              <h3 class="menu-list-item-header">Піца з грушею та сиром Дорблю</h3>
-              <p class="menu-list-item-price">165 грн</p>
-              <button class="menu-list-item-add-button" type="button">Додати</button>
-              </div>
-            </li>
-            <li class="menu-list-item">
-                <div class="menu-list-item-container">
-                  
-                  <div class="svg-like-container">
-                  <button class="menu-like-btn" type="button"><svg
-                class="like-icon"
-                aria-label="like-icon"
-                width="24"
-                height="24"
-                >
-                <use href="../svg/symbol-defs.svg#icon-heart-outline"></use>
-                </svg></button>
-              </div>
-                <picture>
-                  <source
-                    srcset="
-                      ../img/desktop/grusha.png 1x,
-                      ../img/desktop/grusha@2x.png 2x
-                    "
-                    media="(min-width:1158px)"
-                    height="300"
-                    width="360"
-                  />
+           
+            <div class="order-header-container">
+                <h2 class="order-header">Ваше замовлення</h2>
+                <button class="clean-btn" type="button"><svg
+                    class="clean-btn-svg"
+                    aria-label="trash"
+                    width="24"
+                    height="24"
+                    >
+                    <use href="../svg/symbol-defs.svg#icon-trash-outline"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="orderlist-container">
+                <div class="render-item-container"></div>
+                    
+         <div class="total-container">
+            <h3 class="total-header">Загалом</h3>
+            <div class="price-include-container">
                
-                  <source
-                    srcset="../img/mobile/pizza@2x.png 2x"
-                    media="(max-width: 767px)"
-                  />
-                  <img class="menu-img" src="../img/mobile/pizza.png" alt="pizza">
-                </picture>
-                <h3 class="menu-list-item-header">Піца з грушею та сиром Дорблю</h3>
-                <p class="menu-list-item-price">165 грн</p>
-                <button class="menu-list-item-add-button" type="button">Додати</button>
+                <ul class="price-includes-ul">
+                    <li class="price-include-item">
+                        <h4 class="include-header">Страви</h4>
+                        <p class="dishes-price">330 грн</p>
+                    </li>
+                    <li class="price-include-item">
+                        <h4 class="include-header">Доставка</h4>
+                        <p class="delivery-price">50 грн</p>
+                    </li>
+                
+                 </ul>
+             </div>
+            <div class="tips-container">
+                <h3 class="tips-header">Бажаєте залишити чайові?</h3>
+                <div class="tips-button-container">
+                    <ul class="tips-button-ul">
+                        <li class="tips-button-item"><button class="tips-zero-button is-active" type="button">0%</button></li>
+                        <li class="tips-button-item"><button class="tips-ten-button" type="button">10%</button></li>
+                        <li class="tips-button-item"><button class="tips-fifteen-button" type="button">15%</button></li>
+                    </ul>
+                    <p class="tips-price">0 грн</p>
                 </div>
-              </li>
-              <li class="menu-list-item">
-                <div class="menu-list-item-container">
-                  
-                  <div class="svg-like-container">
-                  <button class="menu-like-btn" type="button"><svg
-                class="like-icon"
-                aria-label="like-icon"
-                width="24"
-                height="24"
-                >
-                <use href="../svg/symbol-defs.svg#icon-heart-outline"></use>
-                </svg></button>
-              </div>
-                <picture>
-                  <source
-                    srcset="
-                      ../img/desktop/grusha.png 1x,
-                      ../img/desktop/grusha@2x.png 2x
-                    "
-                    media="(min-width:1158px)"
-                    height="300"
-                    width="360"
-                  />
-               
-                  <source
-                    srcset="../img/mobile/pizza@2x.png 2x"
-                    media="(max-width: 767px)"
-                  />
-                  <img class="menu-img" src="../img/mobile/pizza.png" alt="pizza">
-                </picture>
-                <h3 class="menu-list-item-header">Піца з грушею та сиром Дорблю</h3>
-                <p class="menu-list-item-price">165 грн</p>
-                <button class="menu-list-item-add-button" type="button">Додати</button>
-                </div>
-              </li>
-              <li class="menu-list-item">
-                <div class="menu-list-item-container">
-                 
-                  <div class="svg-like-container">
-                  <button class="menu-like-btn" type="button"><svg
-                class="like-icon"
-                aria-label="like-icon"
-                width="24"
-                height="24"
-                >
-                <use href="../svg/symbol-defs.svg#icon-heart-outline"></use>
-                </svg></button>
-              </div>
-                <picture>
-                  <source
-                    srcset="
-                      ../img/desktop/grusha.png 1x,
-                      ../img/desktop/grusha@2x.png 2x
-                    "
-                    media="(min-width:1158px)"
-                    height="300"
-                    width="360"
-                  />
-               
-                  <source
-                    srcset="../img/mobile/pizza@2x.png 2x"
-                    media="(max-width: 767px)"
-                  />
-                  <img class="menu-img" src="../img/mobile/pizza.png" alt="pizza">
-                </picture>
-                <h3 class="menu-list-item-header">Піца з грушею та сиром Дорблю</h3>
-                <p class="menu-list-item-price">165 грн</p>
-                <button class="menu-list-item-add-button" type="button">Додати</button>
-                </div>
-              </li>
-          </ul>
+                
+            </div>
+         </div>
+         <div class="full-price-container">
+            <h2 class="full-price-header">До сплати:</h2>
+            <p class="full-price">380 грн</p>
         </div>
-      </section>
-  
+            
+        </div>
+    </section>
 
-     
+    <section class="delivery-settings-section">
+        <h2 class="delivery-settings-header visually-hidden">Інформація про доставку</h2>
+        <div class="delivery-settings-container container">
+            <form class="delivery-form">
+                <div class="delivery-form-item-container">
+                    <label for="delivery-way" class="delivery-main-labels">Спосіб доставки</label>
+                    <select name="delivery-way-name" id="delivery-way" class="delivery-way-class">
+             
+                         <option value="delivery" class="delivery-option">Доставка</option>
+                         <option value="local" class="local-option">Самовивіз</option>
+                     </select>
+                </div>
 
+                <div class="delivery-form-item-container">
+                    <h3 class="delivery-main-labels">Адреса доставки</h3>
+                    <label for="street" class="second-labels">Вулиця <span class="required">*</span></label>
+                    <input type="text" id="street" class="main-input" required>
+                    <ul class="home-form-ul">
+                        <li class="home-form-item">
+                            <label for="building" class="second-labels">Будинок <span class="required">*</span></label>
+                            <input type="text" class="home-input" id="building" required>
+                        </li>
+                        <li class="home-form-item">
+                            <label for="entrance" class="second-labels">Під’їзд</label>
+                            <input type="text" class="home-input" id="entrance">
+                        </li>
+                        <li class="home-form-item">
+                            <label for="floor" class="second-labels">Поверх</label>
+                            <input type="text" class="home-input" id="floor">
+                        </li>
+                        <li class="home-form-item">
+                            <label for="apartment" class="second-labels">Квартира</label>
+                            <input type="text" class="home-input" id="apartment">
+                        </li>
+                    </ul>
+                    <label for="address-comment" class="second-labels">Коментар до замовлення</label>
+                    <textarea name="address-comment" id="address-comment" class="comment" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="delivery-form-item-container">
+                    <h3 class="delivery-main-labels">Контактні дані</h3>
+                    <label for="name" class="second-labels">Ваше ім’я <span class="required">*</span></label>
+
+                    <input type="text" class="main-input" id="name" required>
+
+                    <label for="phone" class="second-labels">Номер телефону <span class="required">*</span></label>
+
+                    <input type="tel" class="main-input" id="phone" required>
+                
+                </div>
+                <div class="delivery-form-item-container">
+                    <h3 class="delivery-main-labels">Спосіб оплати</h3>
+                    <select name="delivery-way-name" id="delivery-way" class="delivery-way-class">
+             
+                        <option value="delivery" class="delivery-option">Оплатити зараз</option>
+                     <option value="local" class="local-option">Оплатити на місці</option>
+                    </select>
+                    <label for="order-comment" class="second-labels">Коментар до замовлення</label>
+                    <textarea name="order-comment" id="address-comment" class="comment" cols="30" rows="10"></textarea>
+                </div>
+
+                <button class="complete-order-btn" type="submit">Оформити замовлення</button>
+
+            </form>
+        </div>
+    </section>
+   
         <!-- /* Footer Section */ -->
 
 
@@ -314,23 +276,7 @@
           </footer>
 
 
-
-                <!-- /* Cart */ -->
-
-<div class="cart-container">
-  <button class="cart-button" type="button">
-    <svg
-      class="cart-icon"
-      aria-label="cart-icon"
-      width="30"
-      height="30"
-    >
-      <use href="../svg/symbol-defs.svg#icon-cart-outline"></use>
-    </svg></button>
-</div>
-            
-
-            <!-- /* Mobile Menu */ -->
+                      <!-- /* Mobile Menu */ -->
       
        <div class="modal-mobile-menu">
         <div class="mobile-menu-header">
@@ -435,20 +381,16 @@
             >
             <use href="../svg/symbol-defs.svg#icon-heart-outline"></use>
             </svg></button>
-          <button class="modal-menu-add-button" type="button">Додати у кошик</button>
+          <button class="modal-menu--add-button" type="button">Додати у кошик</button>
         </div>
 
-        </div>
+          </div>
+        </button>
+
+      </div>
       
-
-      </div> 
     </div>
-
-
-            
-
-
       
-      <script type="module" src="../js/menu.js"></script>
+      <script type="module" src="../js/cart.js"></script>
   </body>
 </html>

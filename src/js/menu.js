@@ -1,10 +1,9 @@
 "use strict"
 
 import { pizza, burgers, pita } from './menu-list.js';
+import * as mobileMenu from './mobile-menu';
 
-const mobileMenu = document.querySelector(".modal-mobile-menu");
-const mobileMenuOpenBtn = document.querySelector(".mobile-menu-open-button");
-const mobileMenuCloseBtn = document.querySelector(".close-mobile-menu-btn");
+
 const categoryMenuPizzaBtn = document.querySelector(".category-pizza-btn");
 const categoryMenuBurgerBtn = document.querySelector(".category-burger-btn");
 const categoryMenuPitaBtn = document.querySelector(".category-pita-btn");
@@ -14,8 +13,17 @@ const menu = document.querySelector(".menu-list");
 const modalMenuCloseBtn = document.querySelector(".close-modal-menu-btn");
 const backdrop = document.querySelector(".backdrop");
 const searchInput = document.querySelector(".search-input");
+const cartButton = document.querySelector(".cart-container");
+let addToCartBtn = document.querySelector(".modal-menu-add-button");
 let menuAddItemButtons = document.querySelectorAll(".menu-list-item-add-button");
 let counter = 1;
+let order = [];
+let orderJSON = JSON.stringify(order);
+
+localStorage.setItem('order', orderJSON);
+
+
+mobileMenu.addMobileMenuListener();
 
 function togleMobileMenu (obj){
     obj.classList.toggle("is-open");
@@ -199,9 +207,11 @@ function getItemById(itemId) {
 };
 
 function displayItemModal(itemId) {
-  const modalContent = document.querySelector(".modal-content");
-  // Отримання об'єкта з відповідним id
   const item = getItemById(itemId);
+  const modalContent = document.querySelector(".modal-content");
+  addToCartBtn = document.querySelector(".modal-menu-add-button");
+  addToCartBtn.dataset.info = `${item.id}`;
+  // Отримання об'єкта з відповідним id
   
   // Відображення інформації про об'єкт у модальному вікні
  
@@ -227,11 +237,16 @@ function displayItemModal(itemId) {
     </picture>
     <h2 class="modal-menu-header">${item.name}</h2>
     <p class="modal-menu-price">${item.price} грн</p>
-    <p class="modal-menu-describe">Шинка, маслини, шампіньйони, помідори, сир Моцарела, соус бешамель</p>
+    <p class="modal-menu-describe">Шинка, маслини, шампіньйони, помідори, сир Моцарела, соус бешамель</p>  
+    
 `;
+
+
 
 modalContent.innerHTML="";
 modalContent.insertAdjacentHTML("afterbegin", markup);
+
+
 }
 
 function findItemByText(text) {
@@ -315,15 +330,6 @@ function renderSearchResults(resultArray){
 
 
 
-mobileMenuOpenBtn.addEventListener("click",(event) =>{
-  togleMobileMenu(mobileMenu);
-  document.body.style.overflow = "hidden"; 
-});
-mobileMenuCloseBtn.addEventListener("click",(event) =>{
-    togleMobileMenu(mobileMenu);
-    document.body.style.overflow = "auto";
-});
-
 categoryMenuUl.addEventListener("click", (event) => {
   const targetButton = event.target;
   if (targetButton.tagName === "BUTTON") {
@@ -402,6 +408,32 @@ searchInput.addEventListener("input", (event) => {
 
 
 
+addToCartBtn.addEventListener("click", (event) => {
+  let itemId = addToCartBtn.getAttribute("data-info");
+  let itemObj = {itemId: "", count: ""}
+  const orderStorage = localStorage.getItem('order');
+  const orderArray = JSON.parse(orderStorage);
+  itemObj.count = counter;
+  itemObj.itemId = `${itemId}`;
+  orderArray.push(itemObj);
+
+  let updatedOrderJSON = JSON.stringify(orderArray);
+  localStorage.setItem('order', updatedOrderJSON);
+
+  
+  togleMobileMenu(backdrop);
+  counter = 1;
+  itemsCounter.innerHTML = counter;
+  document.body.style.overflow = "auto";
+
+})
+
+cartButton.addEventListener("click", (event) => {
+  window.location.href = "./cart.html";
+});
+
+
+
 document.addEventListener("DOMContentLoaded", (event) =>{
   menuAddItemButtons = document.querySelectorAll(".menu-list-item-add-button");
   menuAddItemButtons.forEach(button => {
@@ -413,8 +445,6 @@ document.addEventListener("DOMContentLoaded", (event) =>{
     });
   });
 });
-
-
 
 
 document.addEventListener("DOMContentLoaded", changeCategoryMenu(categoryMenuPizzaBtn));

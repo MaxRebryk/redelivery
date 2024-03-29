@@ -1286,6 +1286,12 @@ html{
   padding: 0;
 }
 
+.modal-menu-img{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+}
+
 .modal-menu-header{
   color: var(--Grey, #414141);
   font-size: 20px;
@@ -1401,7 +1407,7 @@ html{
   fill: #F6F1EE;
 }
 
-.modal-menu--add-button{
+.modal-menu-add-button{
   width: 159px;
   height: 44px;
   border: none;
@@ -1414,12 +1420,12 @@ html{
   line-height: normal;
 }
 
-.modal-menu--add-button:hover{
+.modal-menu-add-button:hover{
   background: var(--CTA_Hover, #F5A54D);
   color: #FFFBF9;
 }
 
-.modal-menu--add-button:active{
+.modal-menu-add-button:active{
   background: var(--Orange-Light, #EA7B00);
   color: #FFFBF9;
 }
@@ -1591,7 +1597,7 @@ html{
     fill: #F6F1EE;
   }
   
-  .modal-menu--add-button{
+  .modal-menu-add-button{
     min-width: 246px;
     height: 44px;
     border: none;
@@ -1605,16 +1611,64 @@ html{
     cursor: pointer;
   }
   
-  .modal-menu--add-button:hover{
+  .modal-menu-add-button:hover{
     background: var(--CTA_Hover, #F5A54D);
     color: #FFFBF9;
   }
   
-  .modal-menu--add-button:active{
+  .modal-menu-add-button:active{
     background: var(--Orange-Light, #EA7B00);
     color: #FFFBF9;
   }
 
   }
+
+
+                    /* Cart button mobile */
+
+@media screen and (max-width:767px){
+  .cart-container{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    position: fixed;
+    z-index: 99999;
+    top: 90%;
+    left: 85%;
+    box-shadow: 1px 5px 5px 1px rgba(79, 74, 69, 0.25);
+  
+   
+   
+  }
+
+  .cart-button{
+    position: relative;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
+  }
+
+  .cart-button:active{
+    background-color:#F5A54D;
+  }
+
+  .cart-button:active .cart-icon{
+    stroke:#F6F1EE;
+    fill: #F6F1EE;
+  }
+
+  .cart-icon{
+    position: absolute;
+    stroke: #EA7B00;
+    fill: #EA7B00;
+    top: 10px;
+    left: 10px;
+  }
+
+
+}
 
 
