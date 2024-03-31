@@ -1,6 +1,7 @@
 "use strict";
 
-import * as mobileMenu from "./src/js/mobile-menu";
+import * as mobileMenu from "./src/js/mobile-menu.js";
+
 
 mobileMenu.addMobileMenuListener();
 
