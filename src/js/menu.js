@@ -1,7 +1,7 @@
 "use strict"
 
 import { pizza, burgers, pita } from './menu-list.js';
-import * as mobileMenu from './mobile-menu.js';
+import * as mobileMenu from "../js/mobile-menu.js"
 
 
 const categoryMenuPizzaBtn = document.querySelector(".category-pizza-btn");
