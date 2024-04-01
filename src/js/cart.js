@@ -15,7 +15,12 @@ const fullPrice = document.querySelector(".full-price");
 const tipsPrice = document.querySelector(".tips-price");
 const dishesPrice = document.querySelector(".dishes-price");
 const backMenuBtn = document.querySelector(".back-menu-btn");
+
+let orderStorage = localStorage.getItem('order');
+let orderArray = JSON.parse(orderStorage);
+
 let totalOrderPrice = 0;
+let tips = 0;
   
 
 
@@ -29,7 +34,7 @@ mobileMenu.addMobileMenuListener();
 
 
 function calculatePrice() {
-    let tips = 0;
+    tips = 0;
     if (mediumTipsBtn.classList.contains("is-active")) {
         tips = (totalOrderPrice * 10) / 100;
         tipsPrice.textContent = `${tips} грн`
@@ -39,8 +44,36 @@ function calculatePrice() {
         tips = (totalOrderPrice * 15) / 100;
         tipsPrice.textContent = `${tips} грн`
     }
+    dishesPrice.textContent = `${totalOrderPrice} грн`;
     tipsPrice.textContent = `${tips} грн`
     fullPrice.textContent = totalOrderPrice + tips + 50 + " грн";
+}
+
+function updatePrices() {
+    // Перераховуємо вартість всіх страв
+    
+    
+    let totalDishesPrice = 0;
+    orderArray.forEach(item => {
+        const menuItem = getItemById(item.itemId);
+        totalDishesPrice += menuItem.price * item.count;
+    });
+    dishesPrice.textContent = `${totalDishesPrice} грн`;
+    tips = 0;
+    if (mediumTipsBtn.classList.contains("is-active")) {
+        tips = (totalDishesPrice * 10) / 100;
+        tipsPrice.textContent = `${tips} грн`
+
+    }
+    if (maxTipsBtn.classList.contains("is-active")) {
+        tips = (totalDishesPrice * 15) / 100;
+        tipsPrice.textContent = `${tips} грн`
+    }
+    tipsPrice.textContent = `${tips} грн`
+    // Перераховуємо повну вартість замовлення з урахуванням tips
+    const totalFullPrice = totalDishesPrice + tips + 50; // Додаємо 50 грн за доставку
+    fullPrice.textContent = `${totalFullPrice} грн`;
+
 }
 
 
@@ -66,15 +99,15 @@ function getItemById(itemId) {
 
 
   document.addEventListener("DOMContentLoaded", (event) => {
-    const orderStorage = localStorage.getItem('order');
-    const orderArray = JSON.parse(orderStorage);
-    
+    calculatePrice();
+    updatePrices();
+
     console.log(orderArray);
     orderArray.forEach((item, index) => { // Додали параметр index
         let itemId = item.itemId;
         const menuArray = getItemById(itemId);
         let counter = item.count;
-        totalOrderPrice += menuArray.price*counter
+        totalOrderPrice += menuArray.price * counter;
         const markup = `<div class="item-container" id="item-${index}">
             <picture>
                 <source
@@ -102,50 +135,76 @@ function getItemById(itemId) {
             
         
             <div class="item-count-container">
-                <button class="item-count-minus-btn" type="button">-</button>
+                <button class="item-count-minus-btn" type="button" data-info="${menuArray.id}">-</button>
                 <p class="counter">${counter}</p>
-                <button class="item-count-plus-btn" type="button">+</button>
+                <button class="item-count-plus-btn" type="button" data-info="${menuArray.id}">+</button>
             </div>
-            <p class="item-price">${menuArray.price*counter} грн</p>
+            <p class="item-price">${menuArray.price * counter} грн</p>
             </div>
-        </div>`
+        </div>`;
 
         renderContainer.insertAdjacentHTML("beforeend", markup);
     });
 
+    calculatePrice();
+
     const countPlusBtns = document.querySelectorAll(".item-count-plus-btn");
     const countMinusBtns = document.querySelectorAll(".item-count-minus-btn");
     const itemsCounters = document.querySelectorAll(".counter");
+    const itemPrices = document.querySelectorAll(".item-price");
     let counters = Array.from({ length: countPlusBtns.length }, () => 1);
-    
 
     for (let i = 0; i < countPlusBtns.length; i++) {
         countPlusBtns[i].addEventListener("click", (event) => {
-        counters[i]++;
-        itemsCounters[i].innerHTML = counters[i];
+            const dataId = countPlusBtns[i].getAttribute("data-info");
+            console.log(dataId);
+            let orderStorage = localStorage.getItem('order');
+            orderArray = JSON.parse(orderStorage);
+            orderArray.forEach((item, index) => {
+                if (item.itemId === dataId) {
+                    item.count += 1;
+                    itemsCounters[i].innerHTML = item.count;
+                    counters[i] = item.count;
+                    let itemFromMenuList = getItemById(item.itemId);
+                    totalOrderPrice = itemFromMenuList.price * item.count;
+                    let updatedPrice = itemFromMenuList.price * item.count;
+                    itemPrices[i].textContent = `${updatedPrice} грн`;
+                }
+            });
+            let updatedOrderJSON = JSON.stringify(orderArray);
+            localStorage.setItem('order', updatedOrderJSON);
+            calculatePrice();
+            updatePrices()
+            console.log(orderArray);
         });
     
         countMinusBtns[i].addEventListener("click", (event) => {
-        if (counters[i] > 1) {
-            counters[i]--;
-            itemsCounters[i].innerHTML = counters[i];
-        }
+            if (counters[i] > 1) {
+                const dataId = countMinusBtns[i].getAttribute("data-info");
+                let orderStorage = localStorage.getItem('order');
+                orderArray = JSON.parse(orderStorage);
+                orderArray.forEach((item, index) => {
+                    if (item.itemId === dataId) {
+                        item.count -= 1;
+                        itemsCounters[i].innerHTML = item.count;
+                        counters[i] = item.count;
+                        let itemFromMenuList = getItemById(item.itemId);
+                        totalOrderPrice = itemFromMenuList.price * item.count;
+                        let updatedPrice = itemFromMenuList.price * item.count;
+                        itemPrices[i].textContent = `${updatedPrice} грн`;
+                    }
+                });
+                let updatedOrderJSON = JSON.stringify(orderArray);
+                localStorage.setItem('order', updatedOrderJSON);
+                calculatePrice();
+                updatePrices()
+                console.log(orderArray);
+            }
         });
-    };
-
-    calculatePrice();
-
-    
-    dishesPrice.textContent = `${totalOrderPrice} грн`;
-
-
-
-    
-    
-    
-
+    }
     
 });
+
 
 
 
@@ -155,13 +214,18 @@ tipsButtonsUl.addEventListener("click", (event) => {
         toggleActiveButton(targetButton);
 
         calculatePrice();
+        updatePrices()
     }
-    fullPrice.textContent = totalOrderPrice + 50 + tips + " грн";
+    
   });
 
 
 cleanOrderBtn.addEventListener("click", (event) =>{
     localStorage.removeItem("order");
+    let order = [];
+    let orderJSON = JSON.stringify(order);
+    localStorage.setItem('order', orderJSON);
+
     renderContainer.innerHTML="";
     tipsPrice.textContent = `0 грн`
     fullPrice.textContent = `0 грн`

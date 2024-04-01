@@ -14,13 +14,16 @@ const modalMenuCloseBtn = document.querySelector(".close-modal-menu-btn");
 const backdrop = document.querySelector(".backdrop");
 const searchInput = document.querySelector(".search-input");
 const cartButton = document.querySelector(".cart-container");
+
 let addToCartBtn = document.querySelector(".modal-menu-add-button");
 let menuAddItemButtons = document.querySelectorAll(".menu-list-item-add-button");
 let counter = 1;
-let order = [];
-let orderJSON = JSON.stringify(order);
+if (!localStorage.getItem("order")){
+  let order = [];
+  let orderJSON = JSON.stringify(order);
+  localStorage.setItem('order', orderJSON);
+}
 
-localStorage.setItem('order', orderJSON);
 
 
 mobileMenu.addMobileMenuListener();
