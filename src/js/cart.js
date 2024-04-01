@@ -1,7 +1,7 @@
 "use strict";
 
 import * as mobileMenu from './mobile-menu.js';
-import { pizza, burgers, pita } from '../js/mobile-menu';
+import { pizza, burgers, pita } from './menu-list.js';
 
 
 
