@@ -519,6 +519,8 @@ addToCartBtn.addEventListener("click", (event) => {
   let itemObj = { itemId: itemId, count: 1 }; // Початкове значення count - 1
   const orderStorage = localStorage.getItem('order');
   let orderArray = JSON.parse(orderStorage) || []; // Якщо localStorage порожній, створюємо порожній масив
+  itemObj.count = counter;
+  itemObj.itemId = `${itemId}`;
   
   // Перевірка, чи вже існує товар з таким itemId в замовленні
   let existingItemIndex = orderArray.findIndex(item => item.itemId === itemId);
