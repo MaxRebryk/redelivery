@@ -8,13 +8,24 @@ import { pizza, burgers, pita } from '../js/menu-list.js';
 const tipsButtonsUl = document.querySelector(".tips-button-ul");
 const renderContainer = document.querySelector(".render-item-container");
 const cleanOrderBtn = document.querySelector(".clean-btn")
-const minTipsBtn = document.querySelector(".tips-zero-button");
 const mediumTipsBtn = document.querySelector(".tips-ten-button");
 const maxTipsBtn = document.querySelector(".tips-fifteen-button");
 const fullPrice = document.querySelector(".full-price");
 const tipsPrice = document.querySelector(".tips-price");
 const dishesPrice = document.querySelector(".dishes-price");
 const backMenuBtn = document.querySelector(".back-menu-btn");
+const deliveryForm = document.querySelector(".delivery-form");
+const DeliveryWay = document.querySelector(".delivery-way-class");
+const streetInput = document.querySelector("#street")
+const buildingInput = document.querySelector("#building")
+const floorInput = document.querySelector("#floor")
+const apartmentInput = document.querySelector("#apartment")
+const addressCommentInput = document.querySelector("#address-comment")
+const nameInput = document.querySelector("#name")
+const phoneInput = document.querySelector("#phone")
+const payWay = document.querySelector("#pay-way")
+const orderCommentInput = document.querySelector("#order-comment")
+
 
 let orderStorage = localStorage.getItem('order');
 let orderArray = JSON.parse(orderStorage);
@@ -99,10 +110,9 @@ function getItemById(itemId) {
 
 
   document.addEventListener("DOMContentLoaded", (event) => {
-    calculatePrice();
-    updatePrices();
 
-    console.log(orderArray);
+
+  
     orderArray.forEach((item, index) => { // Додали параметр index
         let itemId = item.itemId;
         const menuArray = getItemById(itemId);
@@ -157,7 +167,7 @@ function getItemById(itemId) {
     for (let i = 0; i < countPlusBtns.length; i++) {
         countPlusBtns[i].addEventListener("click", (event) => {
             const dataId = countPlusBtns[i].getAttribute("data-info");
-            console.log(dataId);
+            
             let orderStorage = localStorage.getItem('order');
             orderArray = JSON.parse(orderStorage);
             orderArray.forEach((item, index) => {
@@ -175,7 +185,7 @@ function getItemById(itemId) {
             localStorage.setItem('order', updatedOrderJSON);
             calculatePrice();
             updatePrices()
-            console.log(orderArray);
+        
         });
     
         countMinusBtns[i].addEventListener("click", (event) => {
@@ -198,7 +208,7 @@ function getItemById(itemId) {
                 localStorage.setItem('order', updatedOrderJSON);
                 calculatePrice();
                 updatePrices()
-                console.log(orderArray);
+              
             }
         });
     }
@@ -233,3 +243,23 @@ cleanOrderBtn.addEventListener("click", (event) =>{
 })
 
 backMenuBtn.addEventListener("click", (event) => {history.back()});
+
+deliveryForm.addEventListener("submit", (event) =>{
+    event.preventDefault();
+    let deliveryInfo = {};
+
+   
+    deliveryInfo.deliveryWay = DeliveryWay.value;
+    deliveryInfo.street = streetInput.value;
+    deliveryInfo.building = buildingInput.value;
+    deliveryInfo.floor = floorInput.value 
+    deliveryInfo.apartment = apartmentInput.value 
+    deliveryInfo.addressComment = addressCommentInput.value;
+    deliveryInfo.name = nameInput.value;
+    deliveryInfo.phone = phoneInput.value;
+    deliveryInfo.payWay = payWay.value;
+    deliveryInfo.orderComment = orderCommentInput.value;
+    let deliveryInfoJSON = JSON.stringify(deliveryInfo);
+    localStorage.setItem('deliveryInfo', deliveryInfoJSON);
+
+})

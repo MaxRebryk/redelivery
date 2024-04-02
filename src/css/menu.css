@@ -891,13 +891,11 @@ html{
       padding: 0;
     }
   
-    .menu-like-btn:hover .like-icon{
+  
+
+    .menu-like-btn.is-active .like-icon{
       fill: #EA7B00;
       
-    }
-    
-    .menu-like-btn:active .like-icon{
-      fill: #F5A54D;
     }
   
   
@@ -1628,14 +1626,14 @@ html{
 
 @media screen and (max-width:767px){
   .cart-container{
-    width: 50px;
-    height: 50px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     background-color: white;
     position: fixed;
     z-index: 99999;
     top: 90%;
-    left: 85%;
+    right: 20px;
     box-shadow: 1px 5px 5px 1px rgba(79, 74, 69, 0.25);
   
    
@@ -1645,10 +1643,11 @@ html{
   .cart-button{
     position: relative;
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     padding: 0;
+    background: none;
   }
 
   .cart-button:active{
@@ -1664,8 +1663,8 @@ html{
     position: absolute;
     stroke: #EA7B00;
     fill: #EA7B00;
-    top: 10px;
-    left: 10px;
+    top: 17px;
+    left: 15px;
   }
 
 

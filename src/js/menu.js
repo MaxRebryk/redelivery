@@ -15,6 +15,13 @@ const backdrop = document.querySelector(".backdrop");
 const searchInput = document.querySelector(".search-input");
 const cartButton = document.querySelector(".cart-container");
 
+
+if (!localStorage.getItem("fav")){
+  let favArray = [];
+  let favJSON = JSON.stringify(favArray);
+  localStorage.setItem('fav', favJSON);
+}
+
 let addToCartBtn = document.querySelector(".modal-menu-add-button");
 let menuAddItemButtons = document.querySelectorAll(".menu-list-item-add-button");
 let counter = 1;
@@ -24,9 +31,76 @@ if (!localStorage.getItem("order")){
   localStorage.setItem('order', orderJSON);
 }
 
-
-
 mobileMenu.addMobileMenuListener();
+
+
+export default function togleLikeButton (){
+  let menuLikeButtons = document.querySelectorAll(".menu-like-btn");
+  menuLikeButtons.forEach(button => {
+    button.addEventListener("click", (event) => {
+      event.currentTarget.classList.toggle("is-active");
+    })
+    let itemId = button.getAttribute("data-info");
+    let favLocal = localStorage.getItem("fav");
+    let favArray = JSON.parse(favLocal);
+    let existingItemIndex = favArray.findIndex(item => item === itemId);
+    if (existingItemIndex === -1) {
+       
+    } else {
+        button.classList.toggle("is-active");
+    }
+
+
+
+  });
+}
+
+// Функція для додавання обробників подій для кнопок лайк
+function addLikeEventListeners() {
+  let menuLikeButtons = document.querySelectorAll(".menu-like-btn");
+  menuLikeButtons.forEach(button => {
+      button.addEventListener("click", handleLikeButtonClick);
+     
+  });
+}
+
+// Функція для видалення обробників подій для кнопок лайк
+function removeLikeEventListeners() {
+  let menuLikeButtons = document.querySelectorAll(".menu-like-btn");
+  menuLikeButtons.forEach(button => {
+      button.removeEventListener("click", handleLikeButtonClick);
+  });
+}
+
+// Обробник події для кнопок лайк
+function handleLikeButtonClick(event) {
+  const itemId = event.currentTarget.getAttribute("data-info");
+  if (!localStorage.getItem("fav")){
+    let favArray = [];
+    let favJSON = JSON.stringify(favArray);
+    localStorage.setItem('fav', favJSON);
+  }
+  if (localStorage.getItem("fav")){
+    
+    let favLocal = localStorage.getItem("fav");
+    let favArray = JSON.parse(favLocal);
+    let existingItemIndex = favArray.findIndex(item => item === itemId);
+    if (existingItemIndex === -1) {
+        favArray.push(itemId);
+    } else {
+        favArray.splice(existingItemIndex, 1);
+       
+    }
+    let updatedFavJSON = JSON.stringify(favArray);
+
+    localStorage.setItem('fav', updatedFavJSON);
+  }
+  
+}
+
+
+
+
 
 function togleMobileMenu (obj){
     obj.classList.toggle("is-open");
@@ -43,6 +117,7 @@ function togleActiveButton(btn) {
         categoryMenuPitaBtn.classList.toggle("is-active");
     }
     btn.classList.toggle("is-active");
+    
 }
 
 function changeCategoryMenu(btn){
@@ -54,7 +129,7 @@ function changeCategoryMenu(btn){
         <div class="menu-list-item-container">
           
           <div class="svg-like-container">
-          <button class="menu-like-btn" type="button"><svg
+          <button class="menu-like-btn" type="button" data-info="${item.id}"><svg
         class="like-icon"
         aria-label="like-icon"
         width="24"
@@ -103,7 +178,7 @@ function changeCategoryMenu(btn){
         <div class="menu-list-item-container">
           
           <div class="svg-like-container">
-          <button class="menu-like-btn" type="button"><svg
+          <button class="menu-like-btn" type="button" data-info="${item.id}"><svg
         class="like-icon"
         aria-label="like-icon"
         width="24"
@@ -154,7 +229,7 @@ function changeCategoryMenu(btn){
         <div class="menu-list-item-container">
           
           <div class="svg-like-container">
-          <button class="menu-like-btn" type="button"><svg
+          <button class="menu-like-btn" type="button" data-info="${item.id}"><svg
         class="like-icon"
         aria-label="like-icon"
         width="24"
@@ -286,7 +361,7 @@ function renderSearchResults(resultArray){
       <div class="menu-list-item-container">
         
         <div class="svg-like-container">
-        <button class="menu-like-btn" type="button"><svg
+        <button class="menu-like-btn" type="button" data-info="${item.id}"><svg
       class="like-icon"
       aria-label="like-icon"
       width="24"
@@ -347,6 +422,11 @@ categoryMenuUl.addEventListener("click", (event) => {
               document.body.style.overflow = "hidden";
           });
       });
+      removeLikeEventListeners();
+      // Додавання обробників подій для кнопок лайк
+      addLikeEventListeners();
+      // Додатковий код, якщо потрібно
+      togleLikeButton ()
   }
 });
 
@@ -406,6 +486,13 @@ searchInput.addEventListener("input", (event) => {
     
   })});
 
+  removeLikeEventListeners();
+        // Додавання обробників подій для кнопок лайк
+  addLikeEventListeners();
+        // Додатковий код, якщо потрібно
+
+  togleLikeButton ()
+
 
 });
 
@@ -413,23 +500,29 @@ searchInput.addEventListener("input", (event) => {
 
 addToCartBtn.addEventListener("click", (event) => {
   let itemId = addToCartBtn.getAttribute("data-info");
-  let itemObj = {itemId: "", count: ""}
+  let itemObj = { itemId: itemId, count: 1 }; // Початкове значення count - 1
   const orderStorage = localStorage.getItem('order');
-  const orderArray = JSON.parse(orderStorage);
-  itemObj.count = counter;
-  itemObj.itemId = `${itemId}`;
-  orderArray.push(itemObj);
+  let orderArray = JSON.parse(orderStorage) || []; // Якщо localStorage порожній, створюємо порожній масив
+  
+  // Перевірка, чи вже існує товар з таким itemId в замовленні
+  let existingItemIndex = orderArray.findIndex(item => item.itemId === itemId);
+
+  if (existingItemIndex !== -1) { // Якщо товар існує, збільшуємо кількість
+    orderArray[existingItemIndex].count +=1;
+    
+  } else { // Якщо товару немає в замовленні, додаємо його
+    orderArray.push(itemObj);
+  }
 
   let updatedOrderJSON = JSON.stringify(orderArray);
   localStorage.setItem('order', updatedOrderJSON);
 
-  
+  // Додаткові дії, які ви виконуєте після додавання товару в кошик
   togleMobileMenu(backdrop);
   counter = 1;
   itemsCounter.innerHTML = counter;
   document.body.style.overflow = "auto";
-
-})
+});
 
 cartButton.addEventListener("click", (event) => {
   window.location.href = "./cart.html";
@@ -447,7 +540,17 @@ document.addEventListener("DOMContentLoaded", (event) =>{
         document.body.style.overflow = "hidden";
     });
   });
+
+
+  removeLikeEventListeners();
+        // Додавання обробників подій для кнопок лайк
+  addLikeEventListeners();
+        // Додатковий код, якщо потрібно
+  togleLikeButton ()
 });
 
 
 document.addEventListener("DOMContentLoaded", changeCategoryMenu(categoryMenuPizzaBtn));
+
+// Виклик функції для додавання обробників подій для кнопок лайк під час завантаження сторінки
+document.addEventListener("DOMContentLoaded", addLikeEventListeners);
