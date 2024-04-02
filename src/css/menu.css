@@ -333,6 +333,21 @@ html{
         background: var(--CTA_Hover, #F5A54D);
         stroke: #F6F1EE;
       }
+
+      .cart-counter {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #EA7B00;
+        color: white;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
   
       .profile-button{
         position: relative;
@@ -1070,13 +1085,10 @@ html{
       fill: #EA7B00;
       
     }
-
-    .menu-like-btn:focus .like-icon{
-      fill: #EA7B00;
-    }
     
-    .menu-like-btn:active .like-icon{
+    .menu-like-btn.is-active .like-icon{
       fill: #EA7B00;
+      
     }
   
   }
@@ -1667,7 +1679,31 @@ html{
     left: 15px;
   }
 
+  .cart-counter-mobile{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #EA7B00;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 }
 
+                    /* Cart button mobile */
+  
+  
+  @media screen and (min-width: 1158px){
+    .cart-container{
+      display: none;
+    }
+  
+  }
 

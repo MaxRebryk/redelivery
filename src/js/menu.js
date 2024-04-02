@@ -14,6 +14,9 @@ const modalMenuCloseBtn = document.querySelector(".close-modal-menu-btn");
 const backdrop = document.querySelector(".backdrop");
 const searchInput = document.querySelector(".search-input");
 const cartButton = document.querySelector(".cart-container");
+const cartPcButton = document.querySelector(".cart-button");
+const cartCounter = document.querySelector(".cart-counter");
+const cartCounterMobile = document.querySelector(".cart-counter-mobile");
 
 
 if (!localStorage.getItem("fav")){
@@ -34,7 +37,20 @@ if (!localStorage.getItem("order")){
 mobileMenu.addMobileMenuListener();
 
 
-export default function togleLikeButton (){
+function countInCartItems() {
+  const orderStorage = localStorage.getItem('order');
+  let orderArray = JSON.parse(orderStorage);
+  // Перевірка на наявність масиву
+  if (orderArray) {
+    cartCounter.textContent = orderArray.length;
+    cartCounterMobile.textContent = orderArray.length;
+  } else {
+    cartCounter.textContent = '0'; // Якщо масив порожній
+    cartCounterMobile.textContent = '0';
+  }
+}
+
+ function togleLikeButton (){
   let menuLikeButtons = document.querySelectorAll(".menu-like-btn");
   menuLikeButtons.forEach(button => {
     button.addEventListener("click", (event) => {
@@ -519,6 +535,7 @@ addToCartBtn.addEventListener("click", (event) => {
 
   // Додаткові дії, які ви виконуєте після додавання товару в кошик
   togleMobileMenu(backdrop);
+  countInCartItems()
   counter = 1;
   itemsCounter.innerHTML = counter;
   document.body.style.overflow = "auto";
@@ -528,9 +545,14 @@ cartButton.addEventListener("click", (event) => {
   window.location.href = "./cart.html";
 });
 
+cartPcButton.addEventListener("click", (event) => {
+  window.location.href = "./cart.html";
+})
+
 
 
 document.addEventListener("DOMContentLoaded", (event) =>{
+  countInCartItems()
   menuAddItemButtons = document.querySelectorAll(".menu-list-item-add-button");
   menuAddItemButtons.forEach(button => {
     button.addEventListener("click", (event) => {

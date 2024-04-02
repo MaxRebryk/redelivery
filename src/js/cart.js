@@ -16,15 +16,17 @@ const dishesPrice = document.querySelector(".dishes-price");
 const backMenuBtn = document.querySelector(".back-menu-btn");
 const deliveryForm = document.querySelector(".delivery-form");
 const DeliveryWay = document.querySelector(".delivery-way-class");
-const streetInput = document.querySelector("#street")
-const buildingInput = document.querySelector("#building")
-const floorInput = document.querySelector("#floor")
-const apartmentInput = document.querySelector("#apartment")
-const addressCommentInput = document.querySelector("#address-comment")
-const nameInput = document.querySelector("#name")
-const phoneInput = document.querySelector("#phone")
-const payWay = document.querySelector("#pay-way")
-const orderCommentInput = document.querySelector("#order-comment")
+const streetInput = document.querySelector("#street");
+const buildingInput = document.querySelector("#building");
+const floorInput = document.querySelector("#floor");
+const apartmentInput = document.querySelector("#apartment");
+const addressCommentInput = document.querySelector("#address-comment");
+const nameInput = document.querySelector("#name");
+const phoneInput = document.querySelector("#phone");
+const payWay = document.querySelector("#pay-way");
+const orderCommentInput = document.querySelector("#order-comment");
+const secondNameInput = document.querySelector("#second-name");
+const emailInput = document.querySelector("#email");
 
 
 let orderStorage = localStorage.getItem('order');
@@ -256,9 +258,12 @@ deliveryForm.addEventListener("submit", (event) =>{
     deliveryInfo.apartment = apartmentInput.value 
     deliveryInfo.addressComment = addressCommentInput.value;
     deliveryInfo.name = nameInput.value;
+    deliveryInfo.secondName = secondNameInput.value;
+    deliveryInfo.email = emailInput.value;
     deliveryInfo.phone = phoneInput.value;
     deliveryInfo.payWay = payWay.value;
     deliveryInfo.orderComment = orderCommentInput.value;
+    
     let deliveryInfoJSON = JSON.stringify(deliveryInfo);
     localStorage.setItem('deliveryInfo', deliveryInfoJSON);
 
