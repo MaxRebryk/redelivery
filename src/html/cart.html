@@ -117,7 +117,7 @@
            
             <div class="order-header-container">
                 <h2 class="order-header">Ваше замовлення</h2>
-                <button class="clean-btn" type="button"><svg
+                <button class="clean-btn" type="button"><span class="clean-text">Очистити кошик</span><svg
                     class="clean-btn-svg"
                     aria-label="trash"
                     width="24"
@@ -127,10 +127,11 @@
                     </svg>
                 </button>
             </div>
-
+      <div class="order-main-content-container">
             <div class="orderlist-container">
                 <div class="render-item-container"></div>
-                    
+            </div>
+          <div class="price-container">
          <div class="total-container">
             <h3 class="total-header">Загалом</h3>
             <div class="price-include-container">
@@ -164,6 +165,8 @@
             <h2 class="full-price-header">До сплати:</h2>
             <p class="full-price">380 грн</p>
         </div>
+      </div>
+    
             
         </div>
     </section>
@@ -183,39 +186,56 @@
 
                 <div class="delivery-form-item-container">
                     <h3 class="delivery-main-labels">Адреса доставки</h3>
-                    <label for="street" class="second-labels">Вулиця <span class="required">*</span></label>
-                    <input type="text" id="street" class="main-input" required>
-                    <ul class="home-form-ul">
-                        <li class="home-form-item">
-                            <label for="building" class="second-labels">Будинок <span class="required">*</span></label>
-                            <input type="text" class="home-input" id="building" required>
-                        </li>
-                        <li class="home-form-item">
-                            <label for="entrance" class="second-labels">Під’їзд</label>
-                            <input type="text" class="home-input" id="entrance">
-                        </li>
-                        <li class="home-form-item">
-                            <label for="floor" class="second-labels">Поверх</label>
-                            <input type="text" class="home-input" id="floor">
-                        </li>
-                        <li class="home-form-item">
-                            <label for="apartment" class="second-labels">Квартира</label>
-                            <input type="text" class="home-input" id="apartment">
-                        </li>
-                    </ul>
-                    <label for="address-comment" class="second-labels">Коментар до замовлення</label>
+                  
+                    <div class="main-input-container">
+                      
+                      <ul class="home-form-ul">
+                          <li class="main-input-li">
+                            <label for="street" class="second-labels">Вулиця <span class="required">*</span></label>
+                            <input type="text" id="street" class="main-input" required>
+                          </li>
+                          <li class="home-form-item">
+                              <label for="building" class="second-labels">Будинок <span class="required">*</span></label>
+                              <input type="text" class="home-input" id="building" required>
+                          </li>
+                          <li class="home-form-item">
+                              <label for="entrance" class="second-labels">Під’їзд</label>
+                              <input type="text" class="home-input" id="entrance">
+                          </li>
+                          <li class="home-form-item">
+                              <label for="floor" class="second-labels">Поверх</label>
+                              <input type="text" class="home-input" id="floor">
+                          </li>
+                          <li class="home-form-item">
+                              <label for="apartment" class="second-labels">Квартира</label>
+                              <input type="text" class="home-input" id="apartment">
+                          </li>
+                      </ul>
+                   </div>
+                    <label for="address-comment" class="second-labels">Коментар до адреси</label>
                     <textarea name="address-comment" id="address-comment" class="comment" cols="30" rows="10"></textarea>
                 </div>
 
                 <div class="delivery-form-item-container">
                     <h3 class="delivery-main-labels">Контактні дані</h3>
-                    <label for="name" class="second-labels">Ваше ім’я <span class="required">*</span></label>
-
-                    <input type="text" class="main-input" id="name" required>
-
-                    <label for="phone" class="second-labels">Номер телефону <span class="required">*</span></label>
-
-                    <input type="tel" class="main-input" id="phone" required>
+                    <ul class="person-information-ul">
+                      <li class="person-information-li">
+                        <label for="name" class="second-labels">Ваше ім’я <span class="required">*</span></label>
+                        <input type="text" class="main-input" id="name" required>
+                      </li>
+                      <li class="person-information-li">
+                        <label for="second-name" class="second-labels">Ваша фамілія <span class="required">*</span></label>
+                        <input type="text" class="main-input" id="second-name" required>
+                      </li>
+                      <li class="person-information-li">
+                        <label for="phone" class="second-labels">Номер телефону <span class="required">*</span></label>
+                        <input type="tel" class="main-input" id="phone" required>
+                      </li>
+                      <li class="person-information-li">
+                        <label for="email" class="second-labels">Електронна пошта <span class="required">*</span></label>
+                        <input type="email" class="main-input" id="email" required>
+                      </li>
+                        </ul>
                 
                 </div>
                 <div class="delivery-form-item-container">
