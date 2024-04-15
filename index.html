@@ -1,570 +1,472 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css" integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css">
-    <title>Re Delivery</title>
-  </head>
-  <body>
 
-    <!-- /* Header */ -->
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
+  <title>Re Delivery</title>
+</head>
 
-    <header class="head">
-      <div class="head-container">
-        <nav class="header-nav">
-          <a href="./index.html"><svg
-            class="logo-icon"
-            aria-label="redelivery-icon"
-            width="56"
-            height="42"
-          >
+<body>
+
+  <!-- /* Header */ -->
+
+  <header class="head">
+    <div class="head-container">
+      <nav class="header-nav">
+        <a href="./index.html"><svg class="logo-icon" aria-label="redelivery-icon" width="56" height="42">
             <use href="./src/svg/symbol-defs.svg#icon-logo"></use>
           </svg></a>
 
-          <ul class="navigate-list">
-            <li class="navigate-item " >
-              <a  class="navigate-link main-link" href="./index.html">Головна</a>
-            </li>
-            <li class="navigate-item">
-              <a  class="navigate-link" href="./src/html/menu.html">Меню</a>
-            </li>
-            <li class="navigate-item">
-              <a  class="navigate-link" href="">Про нас</a>
-            </li>
-            <li class="navigate-item">
-              <a  class="navigate-link" href="">Відгуки</a>
-            </li>
-            <li class="navigate-item">
-              <a  class="navigate-link" href="">Контакти</a>
-            </li>
-          </ul>
-          <button class="leave-comment" type="button">Залишити відгук</button>
+        <ul class="navigate-list">
+          <li class="navigate-item ">
+            <a class="navigate-link main-link" href="./index.html">Головна</a>
+          </li>
+          <li class="navigate-item">
+            <a class="navigate-link" href="./src/html/menu.html">Меню</a>
+          </li>
+          <li class="navigate-item">
+            <a class="navigate-link" href="">Про нас</a>
+          </li>
+          <li class="navigate-item">
+            <a class="navigate-link" href="">Відгуки</a>
+          </li>
+          <li class="navigate-item">
+            <a class="navigate-link" href="">Контакти</a>
+          </li>
+        </ul>
+        <button class="leave-comment" type="button">Залишити відгук</button>
 
-          <ul class="navigate-buttons-list">
-            <li class="navigate-buttons-item">
-              <button class="fav-button" type="button"><svg
-                class="navigate-icon-header"
-                aria-label="like-icon"
-                width="24"
-                height="24"
-                >
+        <ul class="navigate-buttons-list">
+          <li class="navigate-buttons-item">
+            <button class="fav-button" type="button"><svg class="navigate-icon-header" aria-label="like-icon" width="24"
+                height="24">
                 <use href="./src/svg/symbol-defs.svg#icon-heart-outline"></use>
-                </svg></button>
-            </li>
-            <li class="navigate-buttons-item">
-              <button class="cart-button" type="button"><svg
-                class="navigate-icon-header"
-                aria-label="cart-icon"
-                width="24"
-                height="24"
-                >
+              </svg></button>
+          </li>
+          <li class="navigate-buttons-item">
+            <button class="cart-button" type="button"><svg class="navigate-icon-header" aria-label="cart-icon"
+                width="24" height="24">
                 <use href="./src/svg/symbol-defs.svg#icon-cart-outline"></use>
-                </svg></button>
-            </li>
-            <li class="navigate-buttons-item">
-              <button class="profile-button" type="button"><svg
-                class="navigate-icon-header"
-                aria-label="profile-icon"
-                width="24"
-                height="24"
-                >
+              </svg></button>
+          </li>
+          <li class="navigate-buttons-item">
+            <button class="profile-button" type="button"><svg class="navigate-icon-header" aria-label="profile-icon"
+                width="24" height="24">
                 <use href="./src/svg/symbol-defs.svg#icon-person-outline"></use>
-                </svg></button>
-            </li>
-          </ul>
+              </svg></button>
+          </li>
+        </ul>
 
-          <button type="button" class="mobile-menu-open-button">
-            <svg
-            class="logo-icon"
-            aria-label="redelivery-icon"
-            width="32"
-            height="32"
-          >
+        <button type="button" class="mobile-menu-open-button">
+          <svg class="logo-icon" aria-label="redelivery-icon" width="32" height="32">
             <use href="./src/svg/symbol-defs.svg#icon-mobile-menu"></use>
           </svg>
         </button>
-        </nav>
+      </nav>
 
-        
-      </div>
 
-    </header>
+    </div>
 
-     <!-- /* Greet Section */ -->
+  </header>
 
-    <section class="greet-section">
-      <div class="greet-div container">
-        <div class="greet-main-content">
+  <!-- /* Greet Section */ -->
+
+  <section class="greet-section">
+    <div class="greet-div container">
+      <div class="greet-main-content">
         <h1 class="greet-header">Зголодніли?...</h1>
         <div class="greet-text-container">
-        <p class="greet-text"><span class="orange-text">Re Delivery</span> втамує <br> Ваш голод</p>
+          <p class="greet-text"><span class="orange-text">Re Delivery</span> втамує <br> Ваш голод</p>
         </div>
         <button class="greet-menu-btn">Меню</button>
       </div>
-        <div class="greet-pizza">
-          <img srcset="./src/img/desktop/capricosa@2x.png" src="./src/img/desktop/capricosa.png" alt="pizza" width="400px" height="400px">
-        </div>
-        
+      <div class="greet-pizza">
+        <img srcset="./src/img/desktop/capricosa@2x.png" src="./src/img/desktop/capricosa.png" alt="pizza" width="400px"
+          height="400px">
       </div>
-      <div class="greet-background"></div>
-    </section>
 
-   <!-- /* Advantages Section */ -->
+    </div>
+    <div class="greet-background"></div>
+  </section>
 
-    <section class="advantages">
-      <h2 class="visually-hidden">Переваги</h2>
+  <!-- /* Advantages Section */ -->
 
-      <div class="advantages-div container">
-        <ul class="advantages-list">
-          <li class="advantages-list-item">
-            <div class="advantages-icon-box"> 
-              <svg
-              class="advantages-icon"
-              aria-label="redelivery-icon"
-              width="44"
-              height="44"
-              >
-            
+  <section class="advantages">
+    <h2 class="visually-hidden">Переваги</h2>
+
+    <div class="advantages-div container">
+      <ul class="advantages-list">
+        <li class="advantages-list-item">
+          <div class="advantages-icon-box">
+            <svg class="advantages-icon" aria-label="redelivery-icon" width="44" height="44">
+
               <use href="./src/svg/symbol-defs.svg#icon-restaurant-outline"></use>
-              </svg>
-            </div>
-            <div class="advantages-item-text">
+            </svg>
+          </div>
+          <div class="advantages-item-text">
             <h3 class="advantages-headers">Гастрономічні враження вдома</h3>
             <p class="advantages-text">Насолоджуйтеся вишуканими стравами <br> в затишку власного дому</p>
-            </div>
-            
-          </li>
-          <li class="advantages-list-item">
-            <div class="advantages-icon-box"> 
-            <svg
-            class="advantages-icon"
-            aria-label="redelivery-icon"
-            width="44"
-            height="44"
-            >
-            <use href="./src/svg/symbol-defs.svg#icon-discount-star-02"></use>
+          </div>
+
+        </li>
+        <li class="advantages-list-item">
+          <div class="advantages-icon-box">
+            <svg class="advantages-icon" aria-label="redelivery-icon" width="44" height="44">
+              <use href="./src/svg/symbol-defs.svg#icon-discount-star-02"></use>
             </svg>
-            </div>
-            <div class="advantages-item-text">
+          </div>
+          <div class="advantages-item-text">
             <h3 class="advantages-headers">Спеціальні пропозиції</h3>
             <p class="advantages-text">Ексклюзивні знижки та акції при замовленні на самовивіз</p>
           </div>
-          </li>
-          <li class="advantages-list-item">
-            <div class="advantages-icon-box"> 
-            <svg
-            class="advantages-icon"
-            aria-label="redelivery-icon"
-            width="42"
-            height="42"
-            >
-            <use href="./src/svg/symbol-defs.svg#icon-hourglass-outline"></use>
+        </li>
+        <li class="advantages-list-item">
+          <div class="advantages-icon-box">
+            <svg class="advantages-icon" aria-label="redelivery-icon" width="42" height="42">
+              <use href="./src/svg/symbol-defs.svg#icon-hourglass-outline"></use>
             </svg>
-            </div>
-            <div class="advantages-item-text">
+          </div>
+          <div class="advantages-item-text">
             <h3 class="advantages-headers">Економія часу</h3>
             <p class="advantages-text">Смакуйте свої улюблені страви вже <br> через кілька хвилин після замовлення</p>
           </div>
-          </li>
-        </ul>
+        </li>
+      </ul>
 
-      </div>
-      
+    </div>
 
-    </section>
 
-    <!-- /* Recommends Section*/ -->
+  </section>
 
-    <section class="recom-section">
-      <h2 class="recom-header">Ми рекомендуємо</h2>
-      <div class="recom-div ">
-        <ul class="recom-list">
-          <li class="recom-list-item">
-            <div class="recom-list-item-container">
-              <span class="recom-new">New</span>
-              <div class="svg-like-container">
-              <button class="recom-like-btn" type="button" data-info="1"><svg
-            class="like-icon"
-            aria-label="like-icon"
-            width="24"
-            height="24"
-            >
-            <use href="./src/svg/symbol-defs.svg#icon-heart-outline"></use>
-            </svg></button>
-          </div>
+  <!-- /* Recommends Section*/ -->
+
+  <section class="recom-section">
+    <h2 class="recom-header">Ми рекомендуємо</h2>
+    <div class="recom-div ">
+      <ul class="recom-list">
+        <li class="recom-list-item">
+          <div class="recom-list-item-container">
+            <span class="recom-new">New</span>
+            <div class="svg-like-container">
+              <button class="recom-like-btn" type="button" data-info="1"><svg class="like-icon" aria-label="like-icon"
+                  width="24" height="24">
+                  <use href="./src/svg/symbol-defs.svg#icon-heart-outline"></use>
+                </svg></button>
+            </div>
             <picture>
-              <source
-                srcset="
+              <source srcset="
                   ./src/img/desktop/grusha.png 1x,
                   ./src/img/desktop/grusha@2x.png 2x
-                "
-                media="(min-width:1158px)"
-                height="300"
-                width="360"
-              />
-           
-              <source
-                srcset="./src/img/mobile/pizza@2x.png 2x"
-                media="(max-width: 767px)"
-              />
+                " media="(min-width:1158px)" height="300" width="360" />
+
+              <source srcset="./src/img/mobile/pizza@2x.png 2x" media="(max-width: 767px)" />
               <img class="recom-img" src="./src/img/mobile/pizza.png" alt="pizza">
             </picture>
             <h3 class="recom-list-item-header">Піца з грушею та сиром Дорблю</h3>
             <p class="recom-list-item-price">165 грн</p>
             <button class="recom-list-item-add-button" type="button">Додати</button>
-            </div>
-          </li>
-          <li class="recom-list-item">
-            <div class="recom-list-item-container">
-              <div class="svg-like-container">
-                <button class="recom-like-btn" type="button" data-info="2">
-              <svg
-            class="like-icon"
-            aria-label="like-icon"
-            width="24"
-            height="24"
-            >
-            <use href="./src/svg/symbol-defs.svg#icon-heart-outline"></use>
-            </svg>
-          </button>
           </div>
-          <picture>
-            <source
-              srcset="
-                ./src/img/desktop/grusha.png 1x,
-                ./src/img/desktop/grusha@2x.png 2x
-              "
-              media="(min-width:1158px)"
-              height="300"
-              width="360"
-            />
-         
-            <source
-              srcset="./src/img/mobile/pizza@2x.png 2x"
-              media="(max-width: 767px)"
-            />
-            <img class="recom-img" src="./src/img/mobile/pizza.png" alt="pizza">
-          </picture>
-            <h3 class="recom-list-item-header">Піца з грушею та сиром Дорблю</h3>
-            <p class="recom-list-item-price">165 грн</p>
-            <button class="recom-list-item-add-button" type="button">Додати</button>
-            </div>
-          </li>
-          <li class="recom-list-item">
-            <div class="recom-list-item-container">
-              <div class="svg-like-container">
-                <button class="recom-like-btn" type="button" data-info="3">
-                  <svg
-                class="like-icon"
-                aria-label="like-icon"
-                width="24"
-                height="24"
-                >
-                <use href="./src/svg/symbol-defs.svg#icon-heart-outline"></use>
+        </li>
+        <li class="recom-list-item">
+          <div class="recom-list-item-container">
+            <div class="svg-like-container">
+              <button class="recom-like-btn" type="button" data-info="2">
+                <svg class="like-icon" aria-label="like-icon" width="24" height="24">
+                  <use href="./src/svg/symbol-defs.svg#icon-heart-outline"></use>
                 </svg>
-          </button>
-          </div>
-          <picture>
-            <source
-              srcset="
-                ./src/img/desktop/grusha.png 1x,
-                ./src/img/desktop/grusha@2x.png 2x
-              "
-              media="(min-width:1158px)"
-              height="300"
-              width="360"
-            />
-         
-            <source
-              srcset="./src/img/mobile/pizza@2x.png 2x"
-              media="(max-width: 767px)"
-            />
-            <img class="recom-img" src="./src/img/mobile/pizza.png" alt="pizza">
-          </picture>
-            <h3 class="recom-list-item-header">Піца з грушею та сиром Дорблю</h3>
-            <p class="recom-list-item-price">165 грн</p>
-            <button class="recom-list-item-add-button" type="button">Додати</button>
-            </div>
-          </li>
-          <li class="recom-list-item">
-            <div class="recom-list-item-container">
-              <div class="svg-like-container">
-                <button class="recom-like-btn" type="button" data-info="4">
-              <svg
-            class="like-icon"
-            aria-label="like-icon"
-            width="24"
-            height="24"
-            >
-            <use href="./src/svg/symbol-defs.svg#icon-heart-outline"></use>
-            </svg>
-          </button>
+              </button>
             </div>
             <picture>
-              <source
-                srcset="
-                  ./src/img/desktop/grusha.png 1x,
-                  ./src/img/desktop/grusha@2x.png 2x
-                "
-                media="(min-width:1158px)"
-                height="300"
-                width="360"
-              />
-           
-              <source
-                srcset="./src/img/mobile/pizza@2x.png 2x"
-                media="(max-width: 767px)"
-              />
+              <source srcset="
+                ./src/img/desktop/grusha.png 1x,
+                ./src/img/desktop/grusha@2x.png 2x
+              " media="(min-width:1158px)" height="300" width="360" />
+
+              <source srcset="./src/img/mobile/pizza@2x.png 2x" media="(max-width: 767px)" />
               <img class="recom-img" src="./src/img/mobile/pizza.png" alt="pizza">
             </picture>
             <h3 class="recom-list-item-header">Піца з грушею та сиром Дорблю</h3>
             <p class="recom-list-item-price">165 грн</p>
             <button class="recom-list-item-add-button" type="button">Додати</button>
+          </div>
+        </li>
+        <li class="recom-list-item">
+          <div class="recom-list-item-container">
+            <div class="svg-like-container">
+              <button class="recom-like-btn" type="button" data-info="3">
+                <svg class="like-icon" aria-label="like-icon" width="24" height="24">
+                  <use href="./src/svg/symbol-defs.svg#icon-heart-outline"></use>
+                </svg>
+              </button>
             </div>
-          </li>
-        </ul>
-        <button class="recom-menu-btn" type="button">Переглянути меню</button>
-      </div>
-    </section>
+            <picture>
+              <source srcset="
+                ./src/img/desktop/grusha.png 1x,
+                ./src/img/desktop/grusha@2x.png 2x
+              " media="(min-width:1158px)" height="300" width="360" />
 
-     <!-- /* About us Section */ -->
+              <source srcset="./src/img/mobile/pizza@2x.png 2x" media="(max-width: 767px)" />
+              <img class="recom-img" src="./src/img/mobile/pizza.png" alt="pizza">
+            </picture>
+            <h3 class="recom-list-item-header">Піца з грушею та сиром Дорблю</h3>
+            <p class="recom-list-item-price">165 грн</p>
+            <button class="recom-list-item-add-button" type="button">Додати</button>
+          </div>
+        </li>
+        <li class="recom-list-item">
+          <div class="recom-list-item-container">
+            <div class="svg-like-container">
+              <button class="recom-like-btn" type="button" data-info="4">
+                <svg class="like-icon" aria-label="like-icon" width="24" height="24">
+                  <use href="./src/svg/symbol-defs.svg#icon-heart-outline"></use>
+                </svg>
+              </button>
+            </div>
+            <picture>
+              <source srcset="
+                  ./src/img/desktop/grusha.png 1x,
+                  ./src/img/desktop/grusha@2x.png 2x
+                " media="(min-width:1158px)" height="300" width="360" />
 
-    <section class="about-section">
-      <div class="about-div container">
-        <h2 class="about-header">Про нас</h2>
-        <img class="about-img" srcset="./src/img/mobile/about@2x.jpg 2x" src="./src/img/mobile/about.jpg" alt="making pizza" width="358" height="540">
-        <p class="about-text">Re Delivery - це зручність, економія часу та безпека для вас і вашої родини. Забудьте про готування і черги у ресторанах - просто замовте страви онлайн і отримайте їх прямо до дверей вашого будинку.</p>
-        <p class="about-text">Наша кулінарна команда готує для Вас із справжньою любов‘ю! Ми демонструємо це через використання тільки якісних інгредієнтів, вкладаючи частинку нашої душі в кожне замовлення! </p>
-        <button class="about-order-btn" type="button">Замовити</button>
-      </div>
+              <source srcset="./src/img/mobile/pizza@2x.png 2x" media="(max-width: 767px)" />
+              <img class="recom-img" src="./src/img/mobile/pizza.png" alt="pizza">
+            </picture>
+            <h3 class="recom-list-item-header">Піца з грушею та сиром Дорблю</h3>
+            <p class="recom-list-item-price">165 грн</p>
+            <button class="recom-list-item-add-button" type="button">Додати</button>
+          </div>
+        </li>
+      </ul>
+      <button class="recom-menu-btn" type="button">Переглянути меню</button>
+    </div>
+  </section>
 
-    </section>
+  <!-- /* About us Section */ -->
 
-     <!-- /* FAQ Section */ -->
+  <section class="about-section">
+    <div class="about-div container">
+      <h2 class="about-header">Про нас</h2>
+      <img class="about-img" srcset="./src/img/mobile/about@2x.jpg 2x" src="./src/img/mobile/about.jpg"
+        alt="making pizza" width="358" height="540">
+      <p class="about-text">Re Delivery - це зручність, економія часу та безпека для вас і вашої родини. Забудьте про
+        готування і черги у ресторанах - просто замовте страви онлайн і отримайте їх прямо до дверей вашого будинку.</p>
+      <p class="about-text">Наша кулінарна команда готує для Вас із справжньою любов‘ю! Ми демонструємо це через
+        використання тільки якісних інгредієнтів, вкладаючи частинку нашої душі в кожне замовлення! </p>
+      <button class="about-order-btn" type="button">Замовити</button>
+    </div>
+
+  </section>
+
+  <!-- /* FAQ Section */ -->
 
 
-    <section class="faq-section">
-      <div class="faq-div">
-        <h2 class="faq-header">Як здійснити доставку?</h2>
-        <ul class="faq-ul">
-          <li class="faq-list-item">
-            
-            <div class="faq-item-container">
-              <div class="faq-svg-container">
-                <svg
-              class="faq-item-svg"
-              aria-label="clock"
-              width="36"
-              height="36"
-              >
-              <use href="./src/svg/symbol-defs.svg#icon-alarm-01"></use>
+  <section class="faq-section">
+    <div class="faq-div">
+      <h2 class="faq-header">Як здійснити доставку?</h2>
+      <ul class="faq-ul">
+        <li class="faq-list-item">
+
+          <div class="faq-item-container">
+            <div class="faq-svg-container">
+              <svg class="faq-item-svg" aria-label="clock" width="36" height="36">
+                <use href="./src/svg/symbol-defs.svg#icon-alarm-01"></use>
               </svg>
             </div>
-              <div class="faq-item-content-container">
-                <h3 class="faq-item-header">Час роботи</h3>
-                <p class="faq-item-text">Ми працюємо без вихідних, з 09:00 до 22:00
-                  Доставка працює з 11:00 до 21:00</p>
-              </div>
+            <div class="faq-item-content-container">
+              <h3 class="faq-item-header">Час роботи</h3>
+              <p class="faq-item-text">Ми працюємо без вихідних, з 09:00 до 22:00
+                Доставка працює з 11:00 до 21:00</p>
             </div>
-          </li>
-          <li class="faq-list-item">
-            
-            <div class="faq-item-container">
-              <div class="faq-svg-container">
-                <svg
-              class="faq-item-svg"
-              aria-label="clock"
-              width="36"
-              height="36"
-              >
-              <use href="./src/svg/symbol-defs.svg#icon-currency-dollar"></use>
+          </div>
+        </li>
+        <li class="faq-list-item">
+
+          <div class="faq-item-container">
+            <div class="faq-svg-container">
+              <svg class="faq-item-svg" aria-label="clock" width="36" height="36">
+                <use href="./src/svg/symbol-defs.svg#icon-currency-dollar"></use>
               </svg>
             </div>
-              <div class="faq-item-content-container">
-                <h3 class="faq-item-header">Ціна доставки</h3>
-                <p class="faq-item-text">При самовивозі надається знижка на страви у розмірі 10%</p>
-              </div>
+            <div class="faq-item-content-container">
+              <h3 class="faq-item-header">Ціна доставки</h3>
+              <p class="faq-item-text">При самовивозі надається знижка на страви у розмірі 10%</p>
             </div>
-          </li>
-          <li class="faq-list-item">
-            
-            <div class="faq-item-container">
-              <div class="faq-svg-container">
-                <svg
-              class="faq-item-svg"
-              aria-label="clock"
-              width="36"
-              height="36"
-              >
-              <use href="./src/svg/symbol-defs.svg#icon-wallet-02"></use>
+          </div>
+        </li>
+        <li class="faq-list-item">
+
+          <div class="faq-item-container">
+            <div class="faq-svg-container">
+              <svg class="faq-item-svg" aria-label="clock" width="36" height="36">
+                <use href="./src/svg/symbol-defs.svg#icon-wallet-02"></use>
               </svg>
             </div>
-              <div class="faq-item-content-container">
-                <h3 class="faq-item-header">Оплата замовлення</h3>
-                <p class="faq-item-text">При самовивозі надається знижка на страви у розмірі 10%</p>
-              </div>
+            <div class="faq-item-content-container">
+              <h3 class="faq-item-header">Оплата замовлення</h3>
+              <p class="faq-item-text">При самовивозі надається знижка на страви у розмірі 10%</p>
             </div>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </li>
+      </ul>
+    </div>
 
-    </section>
+  </section>
 
-     <!-- /* Help Section */ -->
+  <!-- /* Help Section */ -->
 
-    <section class="help-section">
-      <div class="help-div container">
-        <h2 class="help-header">Потрібна допомога?</h2>
-        <form class="help-form" >
-          <legend class="help-form-legend">Зв’язатись з нами</legend>
-          <input class="form-help-input" type="text" placeholder="Ваше ім’я" required>
-          <input class="form-help-input" type="tel" placeholder="Номер телефону" required>
-          <input class="form-help-input" type="email" placeholder="Електронна пошта" required>
-          <textarea class="form-help-message" name="help-message" cols="30" rows="10" placeholder="Повідомлення" required></textarea>
-          <button class="form-help-btn" type="submit">Надіслати</button>
-        </form>
-      </div>
-    </section>
+  <section class="help-section">
+    <div class="help-div container">
+      <h2 class="help-header">Потрібна допомога?</h2>
+      <form class="help-form">
+        <legend class="help-form-legend">Зв’язатись з нами</legend>
+        <input class="form-help-input" type="text" placeholder="Ваше ім’я" required>
+        <input class="form-help-input" type="tel" placeholder="Номер телефону" required>
+        <input class="form-help-input" type="email" placeholder="Електронна пошта" required>
+        <textarea class="form-help-message" name="help-message" cols="30" rows="10" placeholder="Повідомлення"
+          required></textarea>
+        <button class="form-help-btn" type="submit">Надіслати</button>
+      </form>
+    </div>
+  </section>
 
-      <!-- /* Address Section */ -->
+  <!-- /* Address Section */ -->
 
-    <section class="address-section">
-      <div class="address-div container">
-        <h2 class="address-header">Наша адреса</h2>
-        <div class="address-text-content-container">
+  <section class="address-section">
+    <div class="address-div container">
+      <h2 class="address-header">Наша адреса</h2>
+      <div class="address-text-content-container">
         <h2 class="address-header-desktop">Ми з радістю <br> допоможемо Вам</h2>
-        <img class="address-map-img" srcset="./src/img/mobile/Basemap@2x.jpg 2x" src="./src/img/mobile/Basemap.jpg" alt="map" width="358" height="273">
-        
+        <img class="address-map-img" srcset="./src/img/mobile/Basemap@2x.jpg 2x" src="./src/img/mobile/Basemap.jpg"
+          alt="map" width="358" height="273">
+
         <ul class="address-ul">
           <li class="address-list-item">
             <h3 class="address-content-header-desktop">Адреса</h3>
-            <p class="address-text-desktop">вул. Матросова, 4, Кам’янець-Подільський</p></li>
+            <p class="address-text-desktop">вул. Матросова, 4, Кам’янець-Подільський</p>
+          </li>
           <li class="address-list-item">
             <h3 class="address-content-header-desktop">E-mail</h3>
-            <p class="address-text-desktop">redelivery2023@gmail.com</p></li>
+            <p class="address-text-desktop">redelivery2023@gmail.com</p>
+          </li>
           <li class="address-list-item">
             <h3 class="address-content-header-desktop">Телефон</h3>
-            <p class="address-text-desktop">+380 (68) 416 50 02</p></li>
-        </ul>
-      </div>
-
-        <div class="map-div">
-          <div class="help-div container">
-            
-            <form class="help-form" >
-              <legend class="help-form-legend">Зв’язатись з нами</legend>
-              <input class="form-help-input" type="text" placeholder="Ваше ім’я" required>
-              <input class="form-help-input" type="tel" placeholder="Номер телефону" required>
-              <input class="form-help-input" type="email" placeholder="Електронна пошта" required>
-              <textarea class="form-help-message" name="help-message" cols="30" rows="10" placeholder="Повідомлення" required></textarea>
-              <button class="form-help-btn" type="submit">Надіслати</button>
-            </form>
-          </div>
-        </div>
-        <h3 class="address-content-header">Адреса</h3>
-        <p class="address-text">вул. Матросова, 4/4, Кам’янець-Подільський</p>
-      </div>
-    </section>
-
-    
-
-
-     <!-- /* Footer Section */ -->
-
-
-    <footer class="footer">
-      <div class="footer-div container">
-        <div class="footer-text-content-container">
-        
-        <h2 class="footer-header">Re Delivery</h2>
-        <p class="footer-desktop-text">Не витрачайте час на готування <br> – дозвольте собі <br> насолоджуватися моментом!</p>
-        </div>
-        <ul class="footer-ul">
-          <li class="footer-list">
-            <h3 class="footer-ul-header">Посилання</h3>
-            <ul class="footer-nav">
-              <li class="footer-nav-item"><a class="footer-nav-link" href="./index.html">Головна</a></li>
-              <li class="footer-nav-item"><a class="footer-nav-link" href="./src/html/menu.html">Меню</a></li>
-              <li class="footer-nav-item"><a class="footer-nav-link" href="">Про нас</a></li>
-            </ul>
-          </li>
-          <li class="footer-list">
-            <h3 class="footer-ul-header">Графік роботи</h3>
-            <ul class="footer-nav">
-              <li class="footer-nav-item">Самовивіз 11:00-21:00</li>
-              <li class="footer-nav-item">Доставка 11:00-21:00</li>
-            </ul>
-          </li>
-           <li class="footer-list">
-            <h3 class="footer-ul-header">Контакти</h3>
-            <ul class="footer-nav">
-              <li class="footer-nav-item"><a class="footer-nav-link" href="mailto:redelivery2023@gmail.com">redelivery2023@gmail.com</a></li>
-              <li class="footer-nav-item"><a class="footer-nav-link" href="tel:+380684165002">+380 (68) 416 50 02</a></li>
-            </ul>
+            <p class="address-text-desktop">+380 (68) 416 50 02</p>
           </li>
         </ul>
-       
-    
       </div>
-      <div class="footer-decoration-line"></div>
-    </footer>
 
-     <!-- /* Mobile Menu */ -->
-      
-      <div class="modal-mobile-menu">
-        <div class="mobile-menu-header">
-          <div class="close-mobile-menu-btn-container">
-          <button class="close-mobile-menu-btn" type="button"><svg
-            class="mobile-menu-close-svg"
-            aria-label="person"
-            width="30"
-            height="30"
-            >
-            <use href="./src/svg/symbol-defs.svg#icon-close-circle-outline"></use>
-            </svg>
-          </button>
+      <div class="map-div">
+        <div class="help-div container">
+
+          <form class="help-form">
+            <legend class="help-form-legend">Зв’язатись з нами</legend>
+            <input class="form-help-input" type="text" placeholder="Ваше ім’я" required>
+            <input class="form-help-input" type="tel" placeholder="Номер телефону" required>
+            <input class="form-help-input" type="email" placeholder="Електронна пошта" required>
+            <textarea class="form-help-message" name="help-message" cols="30" rows="10" placeholder="Повідомлення"
+              required></textarea>
+            <button class="form-help-btn" type="submit">Надіслати</button>
+          </form>
         </div>
-          <a href="./index.html"><svg
-            class="logo-mobile-menu-icon"
-            aria-label="redelivery-icon"
-            width="56"
-            height="42"
-          >
-            <use href="./src/svg/symbol-defs.svg#icon-white-logo"></use>
-          </svg></a>
-          <div class="menu-mobile-login-container">
-          <div class="person-menu-container-svg">
-            <svg
-              class="mobile-menu-person-svg"
-              aria-label="person"
-              width="21"
-              height="21"
-              >
-              <use href="./src/svg/symbol-defs.svg#icon-person-outline"></use>
-              </svg>
-            </div>
-            <a class="link-mobile-menu" href="">Увійти |</a>
-            <a class="link-mobile-menu" href="">Зереєструватися</a>
-          </div>
-        </div>
-        <div class="mobile-menu-nav">
-          <ul class="mobile-menu-nav-ul">
-            <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="./index.html">Головна</a></li>
-            <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="./src/html/menu.html">Меню</a></li>
-            <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Про нас</a></li>
-            <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Контакти</a></li>
-            <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Обрані</a></li>
-            <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Кошик</a></li>
-            <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Залишити відгук</a></li>
-          </ul>
-        </div>
+      </div>
+      <h3 class="address-content-header">Адреса</h3>
+      <p class="address-text">вул. Матросова, 4/4, Кам’янець-Подільський</p>
     </div>
-    <script src="https://cdn.pulse.is/livechat/loader.js" data-live-chat-id="6602ebd56000446cc90692a9" async></script>
-    <script type="module" src="./main.js"></script>
-  </body>
+  </section>
+
+
+
+
+  <!-- /* Footer Section */ -->
+
+
+  <footer class="footer">
+    <div class="footer-div container">
+      <div class="footer-text-content-container">
+
+        <h2 class="footer-header">Re Delivery</h2>
+        <p class="footer-desktop-text">Не витрачайте час на готування <br> – дозвольте собі <br> насолоджуватися
+          моментом!</p>
+      </div>
+      <ul class="footer-ul">
+        <li class="footer-list">
+          <h3 class="footer-ul-header">Посилання</h3>
+          <ul class="footer-nav">
+            <li class="footer-nav-item"><a class="footer-nav-link" href="./index.html">Головна</a></li>
+            <li class="footer-nav-item"><a class="footer-nav-link" href="./src/html/menu.html">Меню</a></li>
+            <li class="footer-nav-item"><a class="footer-nav-link" href="">Про нас</a></li>
+          </ul>
+        </li>
+        <li class="footer-list">
+          <h3 class="footer-ul-header">Графік роботи</h3>
+          <ul class="footer-nav">
+            <li class="footer-nav-item">Самовивіз 11:00-21:00</li>
+            <li class="footer-nav-item">Доставка 11:00-21:00</li>
+          </ul>
+        </li>
+        <li class="footer-list">
+          <h3 class="footer-ul-header">Контакти</h3>
+          <ul class="footer-nav">
+            <li class="footer-nav-item"><a class="footer-nav-link"
+                href="mailto:redelivery2023@gmail.com">redelivery2023@gmail.com</a></li>
+            <li class="footer-nav-item"><a class="footer-nav-link" href="tel:+380684165002">+380 (68) 416 50 02</a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+    </div>
+    <div class="footer-decoration-line"></div>
+  </footer>
+
+  <!-- /* Mobile Menu */ -->
+
+  <div class="modal-mobile-menu">
+    <div class="mobile-menu-header">
+      <div class="close-mobile-menu-btn-container">
+        <button class="close-mobile-menu-btn" type="button"><svg class="mobile-menu-close-svg" aria-label="person"
+            width="30" height="30">
+            <use href="./src/svg/symbol-defs.svg#icon-close-circle-outline"></use>
+          </svg>
+        </button>
+      </div>
+      <a href="./index.html"><svg class="logo-mobile-menu-icon" aria-label="redelivery-icon" width="56" height="42">
+          <use href="./src/svg/symbol-defs.svg#icon-white-logo"></use>
+        </svg></a>
+      <div class="menu-mobile-login-container">
+        <div class="person-menu-container-svg">
+          <svg class="mobile-menu-person-svg" aria-label="person" width="21" height="21">
+            <use href="./src/svg/symbol-defs.svg#icon-person-outline"></use>
+          </svg>
+        </div>
+        <a class="link-mobile-menu" href="">Увійти |</a>
+        <a class="link-mobile-menu" href="">Зереєструватися</a>
+      </div>
+    </div>
+    <div class="mobile-menu-nav">
+      <ul class="mobile-menu-nav-ul">
+        <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="./index.html">Головна</a></li>
+        <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="./src/html/menu.html">Меню</a></li>
+        <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Про нас</a></li>
+        <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Контакти</a></li>
+        <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="./favourite.html">Обрані</a></li>
+        <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Кошик</a></li>
+        <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Залишити відгук</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://cdn.pulse.is/livechat/loader.js" data-live-chat-id="6602ebd56000446cc90692a9" async></script>
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>
