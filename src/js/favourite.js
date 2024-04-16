@@ -155,7 +155,7 @@ addToCartBtn.addEventListener('click', event => {
 
   if (existingItemIndex !== -1) {
     // Якщо товар існує, збільшуємо кількість
-    orderArray[existingItemIndex].count += 1;
+    orderArray[existingItemIndex].count += counter;
   } else {
     // Якщо товару немає в замовленні, додаємо його
     orderArray.push(itemObj);

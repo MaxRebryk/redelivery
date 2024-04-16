@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+        integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Menu</title>
+</head>
+
+<body>
+
+    <!-- /* Header */ -->
+
+    <header class="head">
+        <div class="head-container">
+            <nav class="header-nav">
+                <a href=".../index.html"><svg class="logo-icon" aria-label="redelivery-icon" width="56" height="42">
+                        <use href="../svg/symbol-defs.svg#icon-logo"></use>
+                    </svg></a>
+
+                <ul class="navigate-list">
+                    <li class="navigate-item ">
+                        <a class="navigate-link" href="./index.html">Головна</a>
+                    </li>
+                    <li class="navigate-item">
+                        <a class="navigate-link main-link" href="./menu.html">Меню</a>
+                    </li>
+                    <li class="navigate-item">
+                        <a class="navigate-link" href="">Про нас</a>
+                    </li>
+                    <li class="navigate-item">
+                        <a class="navigate-link" href="">Відгуки</a>
+                    </li>
+                    <li class="navigate-item">
+                        <a class="navigate-link" href="">Контакти</a>
+                    </li>
+                </ul>
+                <button class="leave-comment" type="button">Залишити відгук</button>
+
+                <ul class="navigate-buttons-list">
+                    <li class="navigate-buttons-item">
+                        <button class="fav-button" type="button"><svg class="navigate-icon-header"
+                                aria-label="like-icon" width="24" height="24">
+                                <use href="../svg/symbol-defs.svg#icon-heart-outline"></use>
+                            </svg></button>
+                    </li>
+                    <li class="navigate-buttons-item">
+                        <button class="cart-button" type="button"><span class="cart-counter">0</span><svg
+                                class="navigate-icon-header" aria-label="cart-icon" width="24" height="24">
+                                <use href="../svg/symbol-defs.svg#icon-cart-outline"></use>
+                            </svg></button>
+                    </li>
+                    <li class="navigate-buttons-item">
+                        <button class="profile-button" type="button"><svg class="navigate-icon-header"
+                                aria-label="like-icon" width="24" height="24">
+                                <use href="../svg/symbol-defs.svg#icon-person-outline"></use>
+                            </svg></button>
+                    </li>
+                </ul>
+
+                <button type="button" class="mobile-menu-open-button">
+                    <svg class="logo-icon" aria-label="redelivery-icon" width="32" height="32">
+                        <use href="../svg/symbol-defs.svg#icon-mobile-menu"></use>
+                    </svg>
+                </button>
+            </nav>
+
+
+        </div>
+
+    </header>
+
+
+
+
+
+    <!-- /* login Section */ -->
+
+
+    <section class="login-section">
+        <div class="login-div container">
+            <form action="login" class="login-form">
+                <div class="login-header=container">
+                    <a href=".../index.html"><svg class="logo-icon" aria-label="redelivery-icon" width="56" height="42">
+                            <use href="../svg/symbol-defs.svg#icon-logo"></use>
+                        </svg></a>
+                    <legend class="login-header">Увійдіть у свій акаунт</legend>
+                </div>
+                <label for="email">Електронна пошта</label>
+                <input type="email" id="email">
+                <label for="password">Пароль</label>
+                <input type="password" id="password">
+                <a href="">Забули пароль?</a>
+
+                <button type="submit" class="login-btn">Увійти</button>
+
+
+            </form>
+        </div>
+    </section>
+
+
+    <!-- /* Footer Section */ -->
+
+
+    <footer class="footer">
+        <div class="footer-div container">
+            <div class="footer-text-content-container">
+
+                <h2 class="footer-header">Re Delivery</h2>
+                <p class="footer-desktop-text">Не витрачайте час на готування <br> – дозвольте собі <br> насолоджуватися
+                    моментом!</p>
+            </div>
+            <ul class="footer-ul">
+                <li class="footer-list">
+                    <h3 class="footer-ul-header">Посилання</h3>
+                    <ul class="footer-nav">
+                        <li class="footer-nav-item"><a class="footer-nav-link" href=".../index.html">Головна</a></li>
+                        <li class="footer-nav-item"><a class="footer-nav-link" href="./menu.html">Меню</a></li>
+                        <li class="footer-nav-item"><a class="footer-nav-link" href="">Про нас</a></li>
+                    </ul>
+                </li>
+                <li class="footer-list">
+                    <h3 class="footer-ul-header">Графік роботи</h3>
+                    <ul class="footer-nav">
+                        <li class="footer-nav-item">Самовивіз 11:00-21:00</li>
+                        <li class="footer-nav-item">Доставка 11:00-21:00</li>
+                    </ul>
+                </li>
+                <li class="footer-list">
+                    <h3 class="footer-ul-header">Контакти</h3>
+                    <ul class="footer-nav">
+                        <li class="footer-nav-item"><a class="footer-nav-link"
+                                href="mailto:redelivery2023@gmail.com">redelivery2023@gmail.com</a></li>
+                        <li class="footer-nav-item"><a class="footer-nav-link" href="tel:+380684165002">+380 (68) 416 50
+                                02</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="footer-decoration-line"></div>
+    </footer>
+
+
+
+
+    <!-- /* Mobile Menu */ -->
+
+    <div class="modal-mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="close-mobile-menu-btn-container">
+                <button class="close-mobile-menu-btn" type="button"><svg class="mobile-menu-close-svg"
+                        aria-label="person" width="30" height="30">
+                        <use href="../svg/symbol-defs.svg#icon-close-circle-outline"></use>
+                    </svg>
+                </button>
+            </div>
+            <a href="./index.html"><svg class="logo-mobile-menu-icon" aria-label="redelivery-icon" width="56"
+                    height="42">
+                    <use href="../svg/symbol-defs.svg#icon-white-logo"></use>
+                </svg></a>
+            <div class="menu-mobile-login-container">
+                <div class="person-menu-container-svg">
+                    <svg class="mobile-menu-person-svg" aria-label="person" width="21" height="21">
+                        <use href="../svg/symbol-defs.svg#icon-person-outline"></use>
+                    </svg>
+                </div>
+                <a class="link-mobile-menu" href="">Увійти |</a>
+                <a class="link-mobile-menu" href="">Зереєструватися</a>
+            </div>
+        </div>
+        <div class="mobile-menu-nav">
+            <ul class="mobile-menu-nav-ul">
+                <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href=".../index.html">Головна</a></li>
+                <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="./menu.html">Меню</a></li>
+                <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Про нас</a></li>
+                <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Контакти</a></li>
+                <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Обрані</a></li>
+                <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Кошик</a></li>
+                <li class="mobile-menu-nav-item"><a class="link-mobile-menu-nav" href="">Залишити відгук</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script type="module" src="../js/favourite.js"></script>
+</body>
+
+</html>
