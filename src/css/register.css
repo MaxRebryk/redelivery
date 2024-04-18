@@ -503,7 +503,7 @@ input[type="search"] {
 
     .login-form {
         min-width: 358px;
-        min-height: 554px;
+        min-height: 622px;
         padding: 24px 16px;
         display: flex;
         flex-direction: column;
@@ -540,8 +540,16 @@ input[type="search"] {
         display: flex;
         flex-direction: column;
         gap: 12px;
-        margin-bottom: 8px;
+        margin-bottom: 50px;
     }
+
+    .inputs-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+
 
     .login-form-labels {
         color: var(--Grey-Light, #989898);
@@ -562,6 +570,7 @@ input[type="search"] {
 
     }
 
+
     .forgot-link {
         color: var(--Grey, #414141);
         font-size: 14px;
@@ -573,7 +582,7 @@ input[type="search"] {
         margin-bottom: 40px;
     }
 
-    .login-btn {
+    .register-btn {
         min-width: 262px;
         min-height: 44px;
         border-radius: 24px;
@@ -589,12 +598,12 @@ input[type="search"] {
 
     }
 
-    .login-btn:hover {
+    .register-btn:hover {
         background: var(--CTA_Hover, #F5A54D);
 
     }
 
-    .login-btn:active {
+    .register-btn:active {
         background: var(--Orange-Light, #FFD6AA);
     }
 
@@ -606,7 +615,7 @@ input[type="search"] {
         line-height: normal;
     }
 
-    .register-link {
+    .login-link {
 
         color: var(--Accent, #EA7B00);
         font-size: 14px;
@@ -675,7 +684,7 @@ input[type="search"] {
         display: flex;
         flex-direction: column;
         gap: 12px;
-        margin-bottom: 8px;
+        margin-bottom: 20px;
     }
 
     .login-form-labels {

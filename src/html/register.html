@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
         rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/register.css">
     <title>Menu</title>
 </head>
 
@@ -94,25 +94,36 @@
                             height="42">
                             <use href="../svg/symbol-defs.svg#icon-logo"></use>
                         </svg></a>
-                    <legend class="login-header">Увійдіть у свій акаунт</legend>
+                    <legend class="login-header">Створіть свій акаунт</legend>
                 </div>
                 <div class="inputs-container">
-                    <label for="email" class="login-form-labels">Електронна пошта</label>
-                    <input type="email" id="email" class="login-inputs" required>
-                    <label for="password" class="login-form-labels">Пароль</label>
-                    <input type="password" id="password" class="login-inputs" required>
+                    <ul class="inputs-list">
+                        <li class="inputs-item"> <label for="name" class="login-form-labels">Ім’я</label>
+                            <input type="text" id="name" class="login-inputs" required>
+                        </li>
+                        <li class="inputs-item"> <label for="phone" class="login-form-labels">Номер телефону</label>
+                            <input type="number" id="phone" class="login-inputs" required>
+                        </li>
+                        <li class="inputs-item"> <label for="email" class="login-form-labels">Електронна пошта</label>
+                            <input type="email" id="email" class="login-inputs" required>
+                        </li>
+                        <li class="inputs-item">
+                            <label for="password" class="login-form-labels">Пароль</label>
+                            <input type="password" id="password" class="login-inputs" required>
+                        </li>
+
+                    </ul>
                 </div>
 
                 <p class="error-login-text"></p>
 
-                <a href="" class="forgot-link">Забули пароль?</a>
-
-                <button type="submit" class="login-btn">Увійти</button>
 
 
+                <button type="submit" class="register-btn">Зареєструватися</button>
 
-                <p class="register-text">Не маєте акаунт? <a class="register-link"
-                        href="./register.html">Зареєструйтеся</a></p>
+
+
+                <p class="register-text">Маєте акаунт? <a class="login-link" href="./login.html">Увійдіть</a></p>
 
 
             </form>
@@ -204,7 +215,7 @@
         </div>
     </div>
 
-    <script type="module" src="../js/login.js"></script>
+    <script type="module" src="../js/register.js"></script>
 </body>
 
 </html>
