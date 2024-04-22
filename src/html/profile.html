@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
         rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/profile.css">
     <title>Menu</title>
 </head>
 
@@ -83,53 +83,121 @@
 
 
 
-    <!-- /* Register Section */ -->
+    <!-- /* My-order Section */ -->
 
 
-    <section class="login-section">
-        <div class="login-div container">
-            <form action="login" class="login-form">
-                <div class="login-header-container">
-                    <a href=".../index.html"><svg class="form-logo-icon" aria-label="redelivery-icon" width="56"
-                            height="42">
-                            <use href="../svg/symbol-defs.svg#icon-logo"></use>
-                        </svg></a>
-                    <legend class="login-header">Створіть свій акаунт</legend>
-                </div>
-                <div class="inputs-container">
-                    <ul class="inputs-list">
-                        <li class="inputs-item"> <label for="name" class="login-form-labels">Ім’я</label>
-                            <input type="text" id="name" class="login-inputs" required>
-                        </li>
-                        <li class="inputs-item"> <label for="phone" class="login-form-labels">Номер телефону</label>
-                            <input type="text" id="phone" class="login-inputs" required>
-                        </li>
-                        <li class="inputs-item"> <label for="email" class="login-form-labels">Електронна пошта</label>
-                            <input type="email" id="email" class="login-inputs" required>
-                        </li>
-                        <li class="inputs-item">
-                            <label for="password" class="login-form-labels">Пароль</label>
-                            <input type="password" id="password" class="login-inputs" required>
-                        </li>
+    <section class="my-order">
+        <div class="my-order-container container">
+            <h1 class="my-order-header">Мої замовлення </h1>
+            <div class="order-status-container">
+                <ul class="status-list">
+                    <li class="status-list-item">
+                        <div class="first-order-stage active">
+                            <svg class="past-point-icon" aria-label="point-icon" width="8" height="8">
+                                <use href="../svg/symbol-defs.svg#icon-past-point"></use>
+                            </svg>
+                            <svg class="current-point-icon" aria-label="point-icon" width="16" height="16">
+                                <use href="../svg/symbol-defs.svg#icon-current-point"></use>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="status-list-item">
+                        <div class="second-order-stage ">
+                            <svg class="future-point-icon" aria-label="point-icon" width="8" height="8">
+                                <use href="../svg/symbol-defs.svg#icon-past-point"></use>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="status-list-item">
+                        <div class="last-order-stage ">
+                            <svg class="last-point-icon" aria-label="point-icon" width="8" height="8">
+                                <use href="../svg/symbol-defs.svg#icon-past-point"></use>
+                            </svg>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="order-status-headers-container">
+                <ul class="order-status-headers-list">
+                    <li class="order-status-headers-item">
+                        <h3 class="order-status-headers">Оформлено</h3>
+                    </li>
+                    <li class="order-status-headers-item">
+                        <h3 class="order-status-headers">Готується</h3>
+                    </li>
+                    <li class="order-status-headers-item">
+                        <h3 class="order-status-headers">У дорозі</h3>
+                    </li>
+                    <li class="order-status-headers-item">
+                        <h3 class="order-status-headers">Отримано</h3>
+                    </li>
+                </ul>
+            </div>
 
-                    </ul>
-                </div>
+            <div class="current-order-container">
+                <ul class="current-order-list">
+                    <li class="current-order-item">
+                        <div class="item-container">
+                            <div class="item-picture-container">
+                                <picture>
+                                    <source srcset="
+                                      ../img/desktop/grusha.png 1x,
+                                      ../img/desktop/grusha@2x.png 2x
+                                    " media="(min-width:1158px)" height="300" width="360" />
 
-                <p class="error-login-text"></p>
+                                    <source srcset="../img/mobile/pizza@2x.png 2x" media="(max-width: 767px)" width="83"
+                                        height="84" />
+                                    <img class="menu-img" src="../img/mobile/pizza.png" alt="pizza" width="83"
+                                        height="84">
+                                </picture>
+                            </div>
+
+                            <div class="item-info-container">
+
+                                <h3 class="item-header">Піца з грушею та сиром Дорблю</h3>
 
 
+                                <div class="item-count-container">
+                                    <button class="item-count-minus-btn" type="button" data-info="${
+                                  menuArray.id
+                                }">-</button>
+                                    <p class="counter">1</p>
+                                    <button class="item-count-plus-btn" type="button" data-info="${
+                                  menuArray.id
+                                }">+</button>
+                                </div>
+                                <p class="item-price">165 грн</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="current-order-item">
+                        <picture>
+                            <source srcset="
+                                  ../img/desktop/grusha.png 1x,
+                                  ../img/desktop/grusha@2x.png 2x
+                                " media="(min-width:1158px)" height="300" width="360" />
 
-                <button type="submit" class="register-btn">Зареєструватися</button>
-
-
-
-                <p class="register-text">Маєте акаунт? <a class="register-link" href="./login.html">Увійдіть</a></p>
-
-
-            </form>
+                            <source srcset="../img/mobile/pizza@2x.png 2x" media="(max-width: 767px)" width="83"
+                                height="84" />
+                            <img class="menu-img" src="../img/mobile/pizza.png" alt="pizza" width="83" height="84">
+                        </picture>
+                    </li>
+                </ul>
+            </div>
         </div>
+
+
+
     </section>
 
+    <!-- /* History Section */ -->
+
+    <section class="history">
+        <div class="history-container container">
+            <h2 class="history-header">Історія</h2>
+        </div>
+
+    </section>
 
     <!-- /* Footer Section */ -->
 

@@ -44,6 +44,7 @@ loginForm.addEventListener('submit', async event => {
     });
 
     console.log('Успішна реєстрація: ', user);
+    window.location.href = './profile.html';
     // Тут можна перенаправити користувача на іншу сторінку або виконати інші дії
   } catch (error) {
     // Помилка реєстрації

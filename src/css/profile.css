@@ -492,288 +492,206 @@ input[type="search"] {
 }
 
 
-/* Register Section Mobile */
-
+/* My-order Section Mobile */
 
 @media screen and (max-width:767px) {
-
-    .login-section {
-        padding-top: 60px;
+    .my-order {
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
-    .login-form {
+    .my-order-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .my-order-header {
+        color: var(--Grey, #414141);
+        text-shadow: 4px 4px 20px rgba(79, 74, 69, 0.25);
+        font-size: 20px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .order-status-container {
+        position: relative;
+        height: 8px;
+        background: var(--beige-transarency-20, rgba(255, 190, 118, 0.20));
+        border-radius: 24px;
+    }
+
+
+
+    .past-point-icon {
+        position: absolute;
+
+    }
+
+    .current-point-icon {
+        position: absolute;
+        top: -4px;
+        left: 36%;
+    }
+
+    .future-point-icon {
+        position: absolute;
+        left: 65%;
+        top: 0;
+    }
+
+    .last-point-icon {
+        position: absolute;
+        left: 99%;
+        top: 0;
+    }
+
+    .first-order-stage.active {
+        height: 8px;
+        width: 135px;
+        border-radius: 24px;
+        background: linear-gradient(90deg, #EA7B00 1.79%, #FFBE76 100%);
+    }
+
+    .second-order-stage.active {
+        height: 8px;
+        width: 67%;
+        border-radius: 24px;
+        background: linear-gradient(90deg, #EA7B00 1.79%, #FFBE76 100%);
+    }
+
+    .last-order-stage.active {
+        height: 8px;
+        width: 100%;
+        border-radius: 24px;
+        background: linear-gradient(90deg, #EA7B00 1.79%, #FFBE76 100%);
+    }
+
+    .order-status-headers-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+
+    }
+
+    .order-status-headers {
+        color: var(--Grey-Medium, #6B6B6B);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .current-order-container {
+        max-width: 358px;
+        border-radius: 12px;
+        background: var(--Main, #F6F1EE);
+        box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
+    }
+
+    .current-order-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+    }
+
+    .current-order-item {
+        border-bottom: 1px solid #989898;
+        padding: 12px 8px;
+
+    }
+
+    .render-item-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .item-container {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 12px 8px;
         min-width: 358px;
-        min-height: 622px;
-        padding: 24px 16px;
+        min-height: 104px;
+
+
+
+    }
+
+    .item-picture-container {
+        width: 83px;
+    }
+
+    .item-header {
+        color: var(--Grey, #414141);
+        text-align: right;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .item-count-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .item-count-minus-btn {
+        display: flex;
+        flex-direction: row;
         align-items: center;
-        border-radius: 12px;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+        width: 20px;
+        height: 20px;
         background: var(--Main, #F6F1EE);
         box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
-        margin-bottom: 160px;
-
-    }
-
-    .login-header-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 20px;
-    }
-
-    .form-logo-icon {
-        width: 80px;
-        height: 52px;
-    }
-
-    .login-header {
-        color: var(--Grey-Light, #989898);
+        color: var(--Grey, #414141);
         text-align: center;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: normal;
-    }
-
-    .inputs-container {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 50px;
-    }
-
-    .inputs-list {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-    }
-
-
-
-    .login-form-labels {
-        color: var(--Grey-Light, #989898);
         font-size: 16px;
         font-weight: 400;
         line-height: normal;
+        padding: 0;
     }
 
-    .login-inputs {
-        min-width: 326px;
-        min-height: 40px;
-        border-radius: 8px;
+    .item-count-plus-btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+        width: 20px;
+        height: 20px;
         background: var(--Main, #F6F1EE);
         box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
-        border: none;
-        outline: none;
-        padding-left: 5px;
-
-    }
-
-
-    .forgot-link {
-        color: var(--Grey, #414141);
-        font-size: 14px;
-        font-weight: 400;
-        line-height: normal;
-        text-decoration: none;
-        margin-right: auto;
-        cursor: pointer;
-        margin-bottom: 40px;
-    }
-
-    .register-btn {
-        min-width: 262px;
-        min-height: 44px;
-        border-radius: 24px;
-        background: var(--Accent, #EA7B00);
-        border: none;
-        cursor: pointer;
-        color: var(--White, #FFFBF9);
-        text-align: center;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: normal;
-        margin-bottom: auto;
-
-    }
-
-    .register-btn:hover {
-        background: var(--CTA_Hover, #F5A54D);
-
-    }
-
-    .register-btn:active {
-        background: var(--Orange-Light, #FFD6AA);
-    }
-
-    .register-text {
         color: var(--Grey, #414141);
         text-align: center;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: normal;
-    }
-
-    .register-link {
-
-        color: var(--Accent, #EA7B00);
-        font-size: 14px;
-        font-weight: 400;
-        line-height: normal;
-        text-decoration: none;
-    }
-
-    .error-login-text {
-        color: var(--Grey-Light, #CC2828);
         font-size: 16px;
         font-weight: 400;
         line-height: normal;
+        padding: 0;
     }
 
-
-}
-
-
-/* Register Section Desktop */
-
-@media screen and (min-width: 1158px) {
-    .login-section {
-        padding-top: 115px;
-        margin: 0 auto;
-        width: 1280px;
-    }
-
-    .login-form {
-        margin: 0 auto;
-        max-width: 480px;
-        min-height: 563px;
-        padding: 24px 16px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 12px;
-        background: var(--Main, #F6F1EE);
-        box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
-        margin-bottom: 160px;
-
-    }
-
-    .login-header-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 20px;
-    }
-
-    .form-logo-icon {
-        width: 96px;
-        height: 64px;
-    }
-
-    .login-header {
-        color: var(--Grey-Light, #989898);
-        text-align: center;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: normal;
-    }
-
-    .inputs-container {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 20px;
-    }
-
-    .login-form-labels {
-        color: var(--Grey-Light, #989898);
-        font-size: 16px;
-        font-weight: 400;
-        line-height: normal;
-    }
-
-
-    .inputs-list {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .login-inputs {
-        min-width: 448px;
-        min-height: 40px;
-        border-radius: 8px;
-        background: var(--Main, #F6F1EE);
-        box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
-        border: none;
-        outline: none;
-        padding-left: 5px;
-
-
-    }
-
-    .forgot-link {
+    .item-price {
         color: var(--Grey, #414141);
-        font-size: 14px;
-        font-weight: 400;
-        line-height: normal;
-        text-decoration: none;
-        margin-right: auto;
-        cursor: pointer;
-        margin-bottom: 40px;
-    }
-
-    .register-btn {
-        min-width: 262px;
-        min-height: 44px;
-        border-radius: 24px;
-        background: var(--Accent, #EA7B00);
-        border: none;
-        cursor: pointer;
-        color: var(--White, #FFFBF9);
-        text-align: center;
+        text-align: right;
         font-size: 16px;
-        font-weight: 400;
-        line-height: normal;
-        margin-bottom: auto;
-
-    }
-
-    .register-btn:hover {
-        background: var(--CTA_Hover, #F5A54D);
-
-    }
-
-    .register-btn:active {
-        background: var(--Orange-Light, #FFD6AA);
-    }
-
-    .register-text {
-        color: var(--Grey, #414141);
-        text-align: center;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: normal;
-    }
-
-    .register-link {
-
-        color: var(--Accent, #EA7B00);
-        font-size: 14px;
-        font-weight: 400;
-        line-height: normal;
-        text-decoration: none;
-    }
-
-    .error-login-text {
-        color: var(--Grey-Light, #CC2828);
-        font-size: 16px;
-        font-weight: 400;
+        font-weight: 600;
         line-height: normal;
     }
 }
+
+/* History Section Mobile */
+
+@media screen and (max-width:767px) {}
+
 
 /* Footer Section Mobile */
 
