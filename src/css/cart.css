@@ -531,6 +531,7 @@ input[type="search"] {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    margin-bottom: 24px;
   }
 
   .render-item-container {
@@ -1535,6 +1536,222 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
     width: 1120px;
     border: 1px solid #FFFBF9;
     margin: 0 auto;
+  }
+
+}
+
+/* Modal Menu mobile */
+
+@media screen and (max-width:767px) {
+  .modal {
+    min-width: 358px;
+
+    border-radius: 12px;
+    background: var(--Main, #F6F1EE);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 24px 16px 16px 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+
+  .close-modal-mobile-menu-btn-container {
+    position: absolute;
+    top: 4%;
+    left: 85%;
+    min-width: 30px;
+    min-height: 30px;
+  }
+
+  .close-modal-menu-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
+    padding: 0;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding-top: 20px;
+    margin-bottom: 32px;
+  }
+
+  .modal-header {
+    color: var(--Grey, #414141);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+    width: 240px;
+    margin-bottom: 12px;
+    text-align: center;
+
+  }
+
+  .modal-text-info {
+    color: var(--Grey-Medium, #6B6B6B);
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .modal-text {
+    color: var(--Grey, #414141);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .login-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+
+  .login-redirect-btn {
+    width: 262px;
+    height: 44px;
+    border: none;
+    background-color: #EA7B00;
+    border-radius: 24px;
+    color: var(--White, #FFFBF9);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .login-redirect-btn:hover {
+    background: var(--CTA_Hover, #F5A54D);
+    color: #FFFBF9;
+  }
+
+  .login-redirect-btn:active {
+    background: var(--Orange-Light, #EA7B00);
+    color: #FFFBF9;
+  }
+
+}
+
+
+/* Main-Menu Section Desktop*/
+
+
+@media screen and (min-width: 1158px) {
+  .modal {
+    max-width: 480px;
+    min-height: 379px;
+
+    border-radius: 12px;
+    background: var(--Main, #F6F1EE);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 24px 16px 16px 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+
+  .close-modal-mobile-menu-btn-container {
+    position: absolute;
+    top: 4%;
+    left: 85%;
+    min-width: 30px;
+    min-height: 30px;
+  }
+
+  .close-modal-menu-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
+    padding: 0;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding-top: 20px;
+    margin-bottom: 32px;
+  }
+
+  .modal-header {
+    color: var(--Grey, #414141);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+    width: 240px;
+    margin-bottom: 12px;
+    text-align: center;
+
+  }
+
+  .modal-text-info {
+    color: var(--Grey-Medium, #6B6B6B);
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .modal-text {
+    color: var(--Grey, #414141);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .login-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+
+  .login-redirect-btn {
+    width: 262px;
+    height: 44px;
+    border: none;
+    background-color: #EA7B00;
+    border-radius: 24px;
+    color: var(--White, #FFFBF9);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+  }
+
+  .login-redirect-btn:hover {
+    background: var(--CTA_Hover, #F5A54D);
+    color: #FFFBF9;
+  }
+
+  .login-redirect-btn:active {
+    background: var(--Orange-Light, #EA7B00);
+    color: #FFFBF9;
   }
 
 }

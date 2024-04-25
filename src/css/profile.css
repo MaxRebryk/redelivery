@@ -588,18 +588,20 @@ input[type="search"] {
         border-radius: 12px;
         background: var(--Main, #F6F1EE);
         box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
+
     }
 
     .current-order-list {
         display: flex;
         flex-direction: column;
         gap: 12px;
+        padding: 8px 12px;
 
     }
 
     .current-order-item {
         border-bottom: 1px solid #989898;
-        padding: 12px 8px;
+        padding-bottom: 12px;
 
     }
 
@@ -614,8 +616,7 @@ input[type="search"] {
         margin-right: auto;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        padding: 12px 8px;
+
         min-width: 358px;
         min-height: 104px;
 
@@ -625,6 +626,18 @@ input[type="search"] {
 
     .item-picture-container {
         width: 83px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .item-info-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        max-width: 251px;
     }
 
     .item-header {
@@ -684,6 +697,56 @@ input[type="search"] {
         text-align: right;
         font-size: 16px;
         font-weight: 600;
+        line-height: normal;
+    }
+
+    .price-includes-container {
+        border-bottom: 1px solid #989898;
+        padding-bottom: 12px;
+    }
+
+    .price-includes-list {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .price-includes-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .total-price-list {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .total-price-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .price-includes-headers {
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .total-price-header {
+        color: #000;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .price-header {
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
         line-height: normal;
     }
 }

@@ -158,31 +158,73 @@
 
 
                                 <div class="item-count-container">
-                                    <button class="item-count-minus-btn" type="button" data-info="${
-                                  menuArray.id
-                                }">-</button>
+                                    <button class="item-count-minus-btn" type="button">-</button>
                                     <p class="counter">1</p>
-                                    <button class="item-count-plus-btn" type="button" data-info="${
-                                  menuArray.id
-                                }">+</button>
+                                    <button class="item-count-plus-btn" type="button">+</button>
                                 </div>
                                 <p class="item-price">165 грн</p>
                             </div>
                         </div>
                     </li>
                     <li class="current-order-item">
-                        <picture>
-                            <source srcset="
-                                  ../img/desktop/grusha.png 1x,
-                                  ../img/desktop/grusha@2x.png 2x
-                                " media="(min-width:1158px)" height="300" width="360" />
+                        <div class="item-container">
+                            <div class="item-picture-container">
+                                <picture>
+                                    <source srcset="
+                                      ../img/desktop/grusha.png 1x,
+                                      ../img/desktop/grusha@2x.png 2x
+                                    " media="(min-width:1158px)" height="300" width="360" />
 
-                            <source srcset="../img/mobile/pizza@2x.png 2x" media="(max-width: 767px)" width="83"
-                                height="84" />
-                            <img class="menu-img" src="../img/mobile/pizza.png" alt="pizza" width="83" height="84">
-                        </picture>
+                                    <source srcset="../img/mobile/pizza@2x.png 2x" media="(max-width: 767px)" width="83"
+                                        height="84" />
+                                    <img class="menu-img" src="../img/mobile/pizza.png" alt="pizza" width="83"
+                                        height="84">
+                                </picture>
+                            </div>
+
+                            <div class="item-info-container">
+
+                                <h3 class="item-header">Піца з грушею та сиром Дорблю</h3>
+
+
+                                <div class="item-count-container">
+                                    <button class="item-count-minus-btn" type="button">-</button>
+                                    <p class="counter">1</p>
+                                    <button class="item-count-plus-btn" type="button">+</button>
+                                </div>
+                                <p class="item-price">165 грн</p>
+                            </div>
+                        </div>
                     </li>
-                </ul>
+                    <div class="price-includes-container">
+                        <ul class="price-includes-list">
+                            <li class="price-includes-item">
+                                <h3 class="price-includes-headers">Страви</h3>
+                                <p class="price-header">366 грн</p>
+                            </li>
+                            <li class="price-includes-item">
+                                <h3 class="price-includes-headers">Доставка</h3>
+                                <p class="price-header">50 грн</p>
+                            </li>
+                            <li class="price-includes-item">
+                                <h3 class="price-includes-headers">Чайові</h3>
+                                <p class="price-header">0 грн</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="total-price-container">
+                        <ul class="total-price-list">
+                            <li class="total-price-item">
+                                <h3 class="price-includes-headers">Оплата</h3>
+                                <p class="price-header">Картою через сайт</p>
+                            </li>
+                            <li class="total-price-item">
+                                <h3 class="total-price-header">Загальна сума:</h3>
+                                <p class="price-header">366 грн</p>
+                            </li>
+                        </ul>
+
+                    </div>
             </div>
         </div>
 

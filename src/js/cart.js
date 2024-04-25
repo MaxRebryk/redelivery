@@ -25,6 +25,9 @@ const payWay = document.querySelector('#pay-way');
 const orderCommentInput = document.querySelector('#order-comment');
 const secondNameInput = document.querySelector('#second-name');
 const emailInput = document.querySelector('#email');
+const backdrop = document.querySelector('.backdrop');
+const loginRedirectBtn = document.querySelector('.login-redirect-btn');
+const closeModalBtn = document.querySelector('.close-modal-menu-btn');
 
 let orderStorage = localStorage.getItem('order');
 let orderArray = JSON.parse(orderStorage);
@@ -241,7 +244,26 @@ deliveryForm.addEventListener('submit', event => {
   deliveryInfo.phone = phoneInput.value;
   deliveryInfo.payWay = payWay.value;
   deliveryInfo.orderComment = orderCommentInput.value;
-
+  deliveryInfo.tips = tips;
   let deliveryInfoJSON = JSON.stringify(deliveryInfo);
   localStorage.setItem('deliveryInfo', deliveryInfoJSON);
+
+  let confirmedOrder = localStorage.getItem('order');
+  let confirmedOrderArray = JSON.parse(confirmedOrder);
+  let confirmedOrderJSON = JSON.stringify(confirmedOrderArray);
+  localStorage.setItem('confirmedOrder', confirmedOrderJSON);
+  localStorage.removeItem('order');
+  let order = [];
+  let orderJSON = JSON.stringify(order);
+  localStorage.setItem('order', orderJSON);
+
+  backdrop.classList.add('is-open');
+});
+
+loginRedirectBtn.addEventListener('click', event => {
+  window.location.href = './login.html';
+});
+
+closeModalBtn.addEventListener('click', event => {
+  window.location.href = './menu.html';
 });
