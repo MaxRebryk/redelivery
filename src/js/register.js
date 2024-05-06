@@ -1,6 +1,6 @@
 'use strict';
 
-import * as mobileMenu from './mobile-menu.js';
+import * as mobileMenu from '../js/mobile-menu.js';
 import * as firebase from './firebase.js';
 import {
   getAuth,

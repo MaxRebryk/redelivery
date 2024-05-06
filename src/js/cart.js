@@ -97,7 +97,6 @@ function getItemById(itemId) {
 
 document.addEventListener('DOMContentLoaded', event => {
   orderArray.forEach((item, index) => {
-    // Додали параметр index
     let itemId = item.itemId;
     const menuArray = getItemById(itemId);
     let counter = item.count;

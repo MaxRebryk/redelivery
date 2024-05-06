@@ -608,16 +608,21 @@ input[type="search"] {
     .render-item-container {
         display: flex;
         flex-direction: column;
+
         gap: 12px;
     }
+
+
 
     .item-container {
         margin-left: auto;
         margin-right: auto;
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
 
-        min-width: 358px;
+        max-width: 358px;
         min-height: 104px;
 
 
