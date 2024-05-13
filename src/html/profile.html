@@ -172,6 +172,7 @@
 
                     </div>
             </div>
+
         </div>
 
 
@@ -183,6 +184,32 @@
     <section class="history">
         <div class="history-container container">
             <h2 class="history-header">Історія</h2>
+            <div class="history-order-container">
+                <ul class="history-items-list">
+                    <li class="history-orders-items">
+                        <div class="item-picture-container">
+                            <picture>
+                                <source srcset="
+                                ${menuArray.imgDesktop} 1x,
+                                ${menuArray.imgDesktop2x} 2x
+                                " media="(min-width:1158px)" height="300" width="360" />
+
+                                <source srcset="${
+                                  menuArray.imgMobile2x
+                                } 2x" media="(max-width: 767px)" width="83" height="84" />
+                                <img class="menu-img" src="${
+                                  menuArray.imgMobile
+                                }" alt="pizza" width="83" height="84">
+                            </picture>
+                        </div>
+                        <div class="history-item-info-container">
+                            <h3 class="item-header">${counter}x ${menuArray.name}</h3>
+                            <p class="item-price">${menuArray.price * counter} грн</p>
+                        </div>
+            </div>
+            </li>
+            </ul>
+        </div>
         </div>
 
     </section>

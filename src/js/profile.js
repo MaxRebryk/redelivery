@@ -4,14 +4,17 @@ import * as mobileMenu from '../js/mobile-menu.js';
 import { pizza, burgers, pita } from '../js/menu-list.js';
 
 const renderList = document.querySelector('.current-order-items-list');
+const historyRenderList = document.querySelector('.history-items-list');
 const dishesPrice = document.getElementById('dishes-price');
 const fullPrice = document.getElementById('full-price');
 const tipsPrice = document.getElementById('tips-price');
+let deliveryInfo = localStorage.getItem('deliveryInfo');
+let deliveryInfoArray = JSON.parse(deliveryInfo);
 let orderStorage = localStorage.getItem('confirmedOrder');
 let orderArray = JSON.parse(orderStorage);
 
 let totalOrderPrice = 0;
-let tips = 0;
+let tips = deliveryInfoArray.tips;
 
 function getItemById(itemId) {
   const itemFromPizza = pizza.find(item => item.id === parseInt(itemId));
@@ -71,4 +74,40 @@ document.addEventListener('DOMContentLoaded', event => {
   dishesPrice.textContent = `${totalOrderPrice} грн`;
   tipsPrice.textContent = `${tips} грн`;
   fullPrice.textContent = totalOrderPrice + tips + 50 + ' грн';
+});
+
+document.addEventListener('DOMContentLoaded', event => {
+  historyRenderList.textContent = '';
+  let orderHistoryArray = JSON.parse(localStorage.getItem('orderHistory'));
+  console.log(orderHistoryArray);
+  orderHistoryArray.forEach((order, index) => {
+    let markupArray = order.map(item => {
+      let itemId = item.itemId;
+      const menuHistoryArray = getItemById(itemId);
+      let counter = item.count;
+      return `  <li class="history-orders-items">
+        <div class="item-picture-container">
+          <picture>
+            <source srcset="
+              ${menuHistoryArray.imgDesktop} 1x,
+              ${menuHistoryArray.imgDesktop2x} 2x
+            " media="(min-width:1158px)" height="300" width="360" />
+
+            <source srcset="${
+              menuHistoryArray.imgMobile2x
+            } 2x" media="(max-width: 767px)" width="83" height="84" />
+            <img class="menu-img" src="${
+              menuHistoryArray.imgMobile
+            }" alt="pizza" width="83" height="84">
+          </picture>
+          </div>
+          <div class="history-item-info-container">
+            <h3 class="item-header">${counter}x ${menuHistoryArray.name}</h3>
+            <p class="item-price">${menuHistoryArray.price * counter} грн</p>
+          </div>
+        </div>
+      </li>`;
+    });
+    historyRenderList.insertAdjacentHTML('afterbegin', markupArray.join(''));
+  });
 });

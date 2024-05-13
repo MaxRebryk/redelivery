@@ -249,8 +249,15 @@ deliveryForm.addEventListener('submit', event => {
 
   let confirmedOrder = localStorage.getItem('order');
   let confirmedOrderArray = JSON.parse(confirmedOrder);
+
   let confirmedOrderJSON = JSON.stringify(confirmedOrderArray);
   localStorage.setItem('confirmedOrder', confirmedOrderJSON);
+  if (localStorage.getItem('orderHistory') !== 'true') {
+    let orderHistoryArray =
+      JSON.parse(localStorage.getItem('orderHistory')) || []; // Отримання попередньої історії замовлень
+    orderHistoryArray.push(orderArray); // Додавання нового замовлення до історії
+    localStorage.setItem('orderHistory', JSON.stringify(orderHistoryArray)); // Збереження оновленої історії замовлень
+  }
   localStorage.removeItem('order');
   let order = [];
   let orderJSON = JSON.stringify(order);
