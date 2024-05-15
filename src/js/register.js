@@ -1,6 +1,7 @@
 'use strict';
 
 import * as mobileMenu from '../js/mobile-menu.js';
+import addHeaderListeners from '..header.js';
 import * as firebase from './firebase.js';
 import {
   getAuth,
@@ -9,6 +10,7 @@ import {
 } from 'firebase/auth'; // Доданий імпорт auth
 
 mobileMenu.addMobileMenuListener();
+addHeaderListeners();
 
 const loginForm = document.querySelector('.login-form');
 const emailInput = document.getElementById('email');
@@ -16,6 +18,22 @@ const passwordInput = document.getElementById('password');
 const nameInput = document.getElementById('name');
 const phoneInput = document.getElementById('phone');
 const loginErrorMessage = document.querySelector('.error-login-text');
+
+const favButton = document.querySelector('.fav-button');
+const profileButton = document.querySelector('.profile-button');
+const cartButton = document.querySelector('.cart-button');
+
+cartButton.addEventListener('click', event => {
+  window.location.href = './menu.html';
+});
+
+favButton.addEventListener('click', event => {
+  window.location.href = './favourite.html';
+});
+
+profileButton.addEventListener('click', event => {
+  window.location.href = './profile.html';
+});
 
 // Додаємо обробник подій для події 'submit' форми
 loginForm.addEventListener('submit', async event => {

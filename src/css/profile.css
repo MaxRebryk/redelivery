@@ -760,7 +760,277 @@ input[type="search"] {
 /* My-order Section Mobile */
 
 
-@media screen and (min-width: 1158px) {}
+@media screen and (min-width: 1158px) {
+    .my-order {
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+    }
+
+    .my-order-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1120px;
+    }
+
+    .my-order-header {
+        color: var(--Grey, #414141);
+        text-shadow: 4px 4px 20px rgba(79, 74, 69, 0.25);
+        font-size: 24px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .order-status-container {
+        position: relative;
+        height: 8px;
+        background: var(--beige-transarency-20, rgba(255, 190, 118, 0.20));
+        border-radius: 24px;
+    }
+
+
+
+    .past-point-icon {
+        position: absolute;
+
+    }
+
+    .current-point-icon {
+        position: absolute;
+        top: -4px;
+        left: 36%;
+    }
+
+    .future-point-icon {
+        position: absolute;
+        left: 65%;
+        top: 0;
+    }
+
+    .last-point-icon {
+        position: absolute;
+        left: 99%;
+        top: 0;
+    }
+
+    .first-order-stage.active {
+        height: 8px;
+        width: 37%;
+        border-radius: 24px;
+        background: linear-gradient(90deg, #EA7B00 1.79%, #FFBE76 100%);
+    }
+
+    .second-order-stage.active {
+        height: 8px;
+        width: 65%;
+        border-radius: 24px;
+        background: linear-gradient(90deg, #EA7B00 1.79%, #FFBE76 100%);
+    }
+
+    .last-order-stage.active {
+        height: 8px;
+        width: 100%;
+        border-radius: 24px;
+        background: linear-gradient(90deg, #EA7B00 1.79%, #FFBE76 100%);
+    }
+
+    .order-status-headers-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+
+    }
+
+    .order-status-headers {
+        color: var(--Grey-Medium, #6B6B6B);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .current-order-container {
+
+        border-radius: 12px;
+        background: var(--Main, #F6F1EE);
+        box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
+
+    }
+
+    .current-order-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 8px 12px;
+
+    }
+
+    .current-order-item {
+        border-bottom: 1px solid #989898;
+        padding-bottom: 12px;
+
+    }
+
+    .render-item-container {
+        display: flex;
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+
+    .item-container {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+
+        min-height: 104px;
+
+
+
+    }
+
+    .item-picture-container {
+        width: 83px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .item-info-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        max-width: 251px;
+    }
+
+    .item-header {
+        color: var(--Grey, #414141);
+        text-align: right;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .item-count-container {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .item-count-minus-btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+        width: 20px;
+        height: 20px;
+        background: var(--Main, #F6F1EE);
+        box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
+        color: var(--Grey, #414141);
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+        padding: 0;
+    }
+
+    .item-count-plus-btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+        width: 20px;
+        height: 20px;
+        background: var(--Main, #F6F1EE);
+        box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
+        color: var(--Grey, #414141);
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+        padding: 0;
+    }
+
+    .item-price {
+        color: var(--Grey, #414141);
+        text-align: right;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .price-includes-container {
+        border-bottom: 1px solid #989898;
+        padding-bottom: 12px;
+    }
+
+    .price-includes-list {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .price-includes-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .total-price-list {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .total-price-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .price-includes-headers {
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .total-price-header {
+        color: #000;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .price-header {
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    #full-price {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+    }
+}
 
 /* History Section Mobile */
 
@@ -785,6 +1055,45 @@ input[type="search"] {
         min-height: 56px;
         padding: 8px;
         box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
+    }
+
+}
+
+
+/* History Section Mobile */
+
+
+@media screen and (min-width: 1158px) {
+    .history {
+        padding-bottom: 28px;
+    }
+
+    .history-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1120px;
+    }
+
+    .history-header {
+        margin-bottom: 20px;
+    }
+
+    .history-items-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .history-orders-items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        border-radius: 12px;
+        min-width: 358px;
+        min-height: 56px;
+        padding: 8px;
+        box-shadow: 4px 4px 10px 0px rgba(79, 74, 69, 0.25);
     }
 
 }

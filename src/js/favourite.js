@@ -19,6 +19,17 @@ let favArray = JSON.parse(favStorage);
 let addToCartBtn = document.querySelector('.modal-menu-add-button');
 let counter = 1;
 
+const favButton = document.querySelector('.fav-button');
+const profileButton = document.querySelector('.profile-button');
+
+favButton.addEventListener('click', event => {
+  window.location.href = './favourite.html';
+});
+
+profileButton.addEventListener('click', event => {
+  window.location.href = './profile.html';
+});
+
 mobileMenu.addMobileMenuListener();
 
 function countInCartItems() {

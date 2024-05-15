@@ -1,6 +1,7 @@
 'use strict';
 
 import * as mobileMenu from '../js/mobile-menu.js';
+
 import { pizza, burgers, pita } from '../js/menu-list.js';
 
 const tipsButtonsUl = document.querySelector('.tips-button-ul');
@@ -34,6 +35,22 @@ let orderArray = JSON.parse(orderStorage);
 
 let totalOrderPrice = 0;
 let tips = 0;
+
+const favButton = document.querySelector('.fav-button');
+const profileButton = document.querySelector('.profile-button');
+const cartButton = document.querySelector('.cart-button');
+
+cartButton.addEventListener('click', event => {
+  window.location.href = './menu.html';
+});
+
+favButton.addEventListener('click', event => {
+  window.location.href = './favourite.html';
+});
+
+profileButton.addEventListener('click', event => {
+  window.location.href = './profile.html';
+});
 
 mobileMenu.addMobileMenuListener();
 
