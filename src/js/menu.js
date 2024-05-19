@@ -2,7 +2,6 @@
 
 import { pizza, burgers, pita } from './menu-list.js';
 import * as mobileMenu from '../js/mobile-menu.js';
-import cartCount from './cartCounter.js';
 
 const categoryMenuPizzaBtn = document.querySelector('.category-pizza-btn');
 const categoryMenuBurgerBtn = document.querySelector('.category-burger-btn');
@@ -15,7 +14,7 @@ const backdrop = document.querySelector('.backdrop');
 const searchInput = document.querySelector('.search-input');
 const cartButton = document.querySelector('.cart-container');
 const cartPcButton = document.querySelector('.cart-button');
-
+const profileButton = document.querySelector('.profile-button');
 const favButton = document.querySelector('.fav-button');
 
 if (!localStorage.getItem('fav')) {
@@ -36,7 +35,21 @@ if (!localStorage.getItem('order')) {
 }
 
 mobileMenu.addMobileMenuListener();
-cartCount();
+
+function cartCount() {
+  const cartCounter = document.querySelector('.cart-counter');
+  const cartCounterMobile = document.querySelector('.cart-counter-mobile');
+  const orderStorage = localStorage.getItem('order');
+  let orderArray = JSON.parse(orderStorage);
+  // Перевірка на наявність масиву
+  if (orderArray) {
+    cartCounter.textContent = orderArray.length;
+    cartCounterMobile.textContent = orderArray.length;
+  } else {
+    cartCounter.textContent = '0'; // Якщо масив порожній
+    cartCounterMobile.textContent = '0';
+  }
+}
 
 function togleLikeButton() {
   let menuLikeButtons = document.querySelectorAll('.menu-like-btn');
@@ -514,6 +527,10 @@ cartPcButton.addEventListener('click', event => {
 
 favButton.addEventListener('click', event => {
   window.location.href = './favourite.html';
+});
+
+profileButton.addEventListener('click', event => {
+  window.location.href = './profile.html';
 });
 
 document.addEventListener('DOMContentLoaded', event => {

@@ -2,7 +2,6 @@
 
 import * as mobileMenu from '../js/mobile-menu.js';
 import { pizza, burgers, pita } from '../js/menu-list.js';
-import cartCount from './cartCounter.js';
 
 const renderList = document.querySelector('.current-order-items-list');
 const historyRenderList = document.querySelector('.history-items-list');
@@ -29,8 +28,23 @@ favButton.addEventListener('click', event => {
 });
 
 profileButton.addEventListener('click', event => {
+  console.log(1);
   window.location.href = './profile.html';
 });
+
+function cartCount() {
+  const cartCounter = document.querySelector('.cart-counter');
+  const orderStorage = localStorage.getItem('order');
+  let orderArray = JSON.parse(orderStorage);
+  // Перевірка на наявність масиву
+  if (orderArray) {
+    cartCounter.textContent = orderArray.length;
+  } else {
+    cartCounter.textContent = '0'; // Якщо масив порожній
+  }
+}
+
+cartCount();
 
 function areLogin() {
   // Перевіряємо, чи є користувач увійшов без очікування DOMContentLoaded
@@ -56,7 +70,6 @@ function getItemById(itemId) {
 }
 
 mobileMenu.addMobileMenuListener();
-cartCount();
 
 document.addEventListener('DOMContentLoaded', event => {
   renderList.textContent = '';

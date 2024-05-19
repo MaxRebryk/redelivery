@@ -2,11 +2,23 @@
 
 import * as mobileMenu from '../js/mobile-menu.js';
 import * as firebase from './firebase.js';
-import cartCount from './cartCounter.js';
 
 import { signInWithEmailAndPassword } from 'firebase/auth'; // Доданий імпорт auth
 
 mobileMenu.addMobileMenuListener();
+
+function cartCount() {
+  const cartCounter = document.querySelector('.cart-counter');
+  const orderStorage = localStorage.getItem('order');
+  let orderArray = JSON.parse(orderStorage);
+  // Перевірка на наявність масиву
+  if (orderArray) {
+    cartCounter.textContent = orderArray.length;
+  } else {
+    cartCounter.textContent = '0'; // Якщо масив порожній
+  }
+}
+
 cartCount();
 
 const loginForm = document.querySelector('.login-form');

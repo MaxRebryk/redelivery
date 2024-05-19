@@ -102,7 +102,7 @@ export const burgers = [
   {
     id: 102,
     new: false,
-    name: 'Бургер з яловичиною',
+    name: 'Бургер чорний подвійний',
     imgMobile: '../img/mobile/burger.png',
     imgMobile2x: '../img/mobile/burger@2x.png',
     imgDesktop: '../img/desktop/burger.png',

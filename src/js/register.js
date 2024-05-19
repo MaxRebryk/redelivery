@@ -1,18 +1,15 @@
 'use strict';
 
 import * as mobileMenu from '../js/mobile-menu.js';
-import addHeaderListeners from '..header.js';
+
 import * as firebase from './firebase.js';
 import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
 } from 'firebase/auth'; // Доданий імпорт auth
-import cartCount from './cartCounter.js';
 
 mobileMenu.addMobileMenuListener();
-addHeaderListeners();
-cartCount();
 
 const loginForm = document.querySelector('.login-form');
 const emailInput = document.getElementById('email');
@@ -24,6 +21,20 @@ const loginErrorMessage = document.querySelector('.error-login-text');
 const favButton = document.querySelector('.fav-button');
 const profileButton = document.querySelector('.profile-button');
 const cartButton = document.querySelector('.cart-button');
+
+function cartCount() {
+  const cartCounter = document.querySelector('.cart-counter');
+  const orderStorage = localStorage.getItem('order');
+  let orderArray = JSON.parse(orderStorage);
+  // Перевірка на наявність масиву
+  if (orderArray) {
+    cartCounter.textContent = orderArray.length;
+  } else {
+    cartCounter.textContent = '0'; // Якщо масив порожній
+  }
+}
+
+cartCount();
 
 cartButton.addEventListener('click', event => {
   window.location.href = './menu.html';
