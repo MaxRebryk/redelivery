@@ -8,9 +8,11 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from 'firebase/auth'; // Доданий імпорт auth
+import cartCount from './cartCounter.js';
 
 mobileMenu.addMobileMenuListener();
 addHeaderListeners();
+cartCount();
 
 const loginForm = document.querySelector('.login-form');
 const emailInput = document.getElementById('email');

@@ -221,7 +221,7 @@ input[type="search"] {
     align-items: center;
     justify-content: center;
     gap: 28px;
-    width: 440px;
+    width: 500px;
     height: 44px;
     border-radius: 24px;
     background: var(--Accent, #EA7B00);
@@ -229,31 +229,35 @@ input[type="search"] {
   }
 
   .navigate-link {
+
+
     color: var(--Main, #F6F1EE);
     text-align: center;
     font-size: 16px;
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
-
+    padding: 4px 8px;
+    /* Відступи навколо тексту */
+    border-radius: 24px;
+    /* Заокруглення кутів */
+    transition: background-color 0.3s, color 0.3s;
+    /* Плавний перехід кольорів */
   }
 
   .navigate-link:hover {
-    color: var(--Grey, #414141);
-    width: 81px;
-    height: 28px;
-    padding: 4px 8px;
-    border-radius: 24px;
     background: var(--Main, #F6F1EE);
-
+    /* Колір фону при наведенні */
+    color: var(--Grey, #414141);
+    /* Колір тексту при наведенні */
   }
 
 
   .main-link {
     color: var(--Grey, #414141);
     width: 81px;
-    height: 28px;
     padding: 4px 8px;
+    height: 28px;
     border-radius: 24px;
     background: var(--Main, #F6F1EE);
   }
@@ -315,7 +319,12 @@ input[type="search"] {
 
   .fav-button:hover {
     background: var(--CTA_Hover, #F5A54D);
+  }
+
+  .fav-button:hover .navigate-icon-header {
     stroke: #F6F1EE;
+
+
   }
 
   .cart-button {
@@ -331,8 +340,35 @@ input[type="search"] {
 
   .cart-button:hover {
     background: var(--CTA_Hover, #F5A54D);
-    stroke: #F6F1EE;
+
   }
+
+  .cart-button:hover .navigate-icon-header {
+    stroke: #F6F1EE;
+
+  }
+
+  .profile-button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: var(--Main, #F6F1EE);
+    box-shadow: 0px 2px 5px 0px rgba(79, 74, 69, 0.25);
+  }
+
+  .profile-button:hover {
+    background: var(--CTA_Hover, #F5A54D);
+  }
+
+  .profile-button:hover .navigate-icon-header {
+    stroke: #F6F1EE;
+    fill: #F6F1EE;
+
+  }
+
 
   .cart-counter {
     position: absolute;
@@ -349,32 +385,27 @@ input[type="search"] {
     align-items: center;
   }
 
-  .profile-button {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    background-color: var(--Main, #F6F1EE);
-    box-shadow: 0px 2px 5px 0px rgba(79, 74, 69, 0.25);
-  }
 
-  .profile-button:hover {
-    background: var(--CTA_Hover, #F5A54D);
-    stroke: #F6F1EE;
-  }
 
   .navigate-icon-header {
     fill: none;
     stroke: #EA7B00;
     position: absolute;
     top: 20%;
-    left: 22%;
+    left: 20%;
   }
 
   .navigate-icon-header:hover {
     stroke: #F6F1EE;
+  }
+
+  .profile-icon {
+    fill: #EA7B00;
+    stroke-width: 0;
+    height: 18px;
+    width: 18px;
+    top: 28%;
+    left: 27%;
   }
 
 

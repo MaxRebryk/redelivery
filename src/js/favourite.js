@@ -2,6 +2,7 @@
 
 import { pizza, burgers, pita } from './menu-list.js';
 import * as mobileMenu from '../js/mobile-menu.js';
+import cartCount from './cartCounter.js';
 
 const menu = document.querySelector('.menu-list');
 const cartButton = document.querySelector('.cart-container');
@@ -31,6 +32,7 @@ profileButton.addEventListener('click', event => {
 });
 
 mobileMenu.addMobileMenuListener();
+cartCount();
 
 function countInCartItems() {
   const orderStorage = localStorage.getItem('order');

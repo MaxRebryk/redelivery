@@ -2,6 +2,7 @@
 
 import * as mobileMenu from '../js/mobile-menu.js';
 import { pizza, burgers, pita } from '../js/menu-list.js';
+import cartCount from './cartCounter.js';
 
 const renderList = document.querySelector('.current-order-items-list');
 const historyRenderList = document.querySelector('.history-items-list');
@@ -55,6 +56,7 @@ function getItemById(itemId) {
 }
 
 mobileMenu.addMobileMenuListener();
+cartCount();
 
 document.addEventListener('DOMContentLoaded', event => {
   renderList.textContent = '';

@@ -2,10 +2,12 @@
 
 import * as mobileMenu from '../js/mobile-menu.js';
 import * as firebase from './firebase.js';
+import cartCount from './cartCounter.js';
 
 import { signInWithEmailAndPassword } from 'firebase/auth'; // Доданий імпорт auth
 
 mobileMenu.addMobileMenuListener();
+cartCount();
 
 const loginForm = document.querySelector('.login-form');
 const emailInput = document.getElementById('email');

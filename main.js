@@ -8,6 +8,21 @@ const favButton = document.querySelector('.fav-button');
 const profileButton = document.querySelector('.profile-button');
 const cartButton = document.querySelector('.cart-button');
 
+cartCount();
+
+function cartCount() {
+  const cartCounter = document.querySelector('.cart-counter');
+
+  const orderStorage = localStorage.getItem('order');
+  let orderArray = JSON.parse(orderStorage);
+  // Перевірка на наявність масиву
+  if (orderArray) {
+    cartCounter.textContent = orderArray.length;
+  } else {
+    cartCounter.textContent = '0'; // Якщо масив порожній
+  }
+}
+
 recomMenuBtn.addEventListener('click', event => {
   window.location.href = './src/html/menu.html';
 });
