@@ -25,6 +25,7 @@ function cartCount() {
 
 recomMenuBtn.addEventListener('click', event => {
   window.location.href = './src/html/menu.html';
+  npm;
 });
 
 cartButton.addEventListener('click', event => {
