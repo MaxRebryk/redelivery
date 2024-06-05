@@ -1090,6 +1090,8 @@ input[type="search"] {
     margin-bottom: 16px;
     margin-left: auto;
     margin-right: auto;
+    width: 220px;
+    height: 148px;
   }
 
 
@@ -1515,7 +1517,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
   }
 
   .modal-menu-img {
-    width: 296px;
+    width: 450px;
     height: 296px;
     margin-left: auto;
     margin-right: auto;

@@ -15,10 +15,10 @@ export const pizza = [
   {
     id: 2,
     new: false,
-    name: 'Піца з грушею та сиром Дорблю',
+    name: 'Піца Капрічоза',
     imgMobile: '../img/mobile/pizza.png',
     imgMobile2x: '../img/mobile/pizza@2x.png',
-    imgDesktop: '../img/desktop/grusha.png',
+    imgDesktop: '../img/desktop/capricosa-menu.png',
     imgDesktop2x: '../img/desktop/grusha@2x.png',
     price: '165',
   },
