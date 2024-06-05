@@ -28,11 +28,11 @@ function cartCount() {
   const cartCounter = document.querySelector('.cart-counter');
   const orderStorage = localStorage.getItem('order');
   let orderArray = JSON.parse(orderStorage);
-  // Перевірка на наявність масиву
+
   if (orderArray) {
     cartCounter.textContent = orderArray.length;
   } else {
-    cartCounter.textContent = '0'; // Якщо масив порожній
+    cartCounter.textContent = '0';
   }
 }
 
@@ -51,13 +51,12 @@ mobileMenu.addMobileMenuListener();
 function countInCartItems() {
   const orderStorage = localStorage.getItem('order');
   let orderArray = JSON.parse(orderStorage);
-  console.log(orderArray);
-  // Перевірка на наявність масиву
+
   if (orderArray) {
     cartCounter.textContent = orderArray.length;
     cartCounterMobile.textContent = orderArray.length;
   } else {
-    cartCounter.textContent = '0'; // Якщо масив порожній
+    cartCounter.textContent = '0';
     cartCounterMobile.textContent = '0';
   }
 }
@@ -116,9 +115,6 @@ function displayItemModal(itemId) {
   const modalContent = document.querySelector('.modal-content');
   let addToCartBtn = document.querySelector('.modal-menu-add-button');
   addToCartBtn.dataset.info = `${item.id}`;
-  // Отримання об'єкта з відповідним id
-
-  // Відображення інформації про об'єкт у модальному вікні
 
   const markup = `
       <picture class="modal-menu-img">
@@ -171,27 +167,23 @@ modalMenuCloseBtn.addEventListener('click', event => {
 
 addToCartBtn.addEventListener('click', event => {
   let itemId = addToCartBtn.getAttribute('data-info');
-  let itemObj = { itemId: itemId, count: 1 }; // Початкове значення count - 1
+  let itemObj = { itemId: itemId, count: 1 };
   const orderStorage = localStorage.getItem('order');
-  let orderArray = JSON.parse(orderStorage) || []; // Якщо localStorage порожній, створюємо порожній масив
+  let orderArray = JSON.parse(orderStorage) || []; //
   itemObj.count = counter;
   itemObj.itemId = `${itemId}`;
 
-  // Перевірка, чи вже існує товар з таким itemId в замовленні
   let existingItemIndex = orderArray.findIndex(item => item.itemId === itemId);
 
   if (existingItemIndex !== -1) {
-    // Якщо товар існує, збільшуємо кількість
     orderArray[existingItemIndex].count += counter;
   } else {
-    // Якщо товару немає в замовленні, додаємо його
     orderArray.push(itemObj);
   }
 
   let updatedOrderJSON = JSON.stringify(orderArray);
   localStorage.setItem('order', updatedOrderJSON);
 
-  // Додаткові дії, які ви виконуєте після додавання товару в кошик
   togleMobileMenu(backdrop);
   countInCartItems();
   counter = 1;
@@ -215,9 +207,9 @@ countMinusBtn.addEventListener('click', event => {
 document.addEventListener('DOMContentLoaded', event => {
   menu.innerHTML = '';
   favArray.forEach((item, index) => {
-    // Додали параметр index
     let itemId = item;
     const menuArray = getItemById(itemId);
+    console.log(menuArray);
     const markup = `<li class="menu-list-item">
     <div class="menu-list-item-container">
       
