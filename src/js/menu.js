@@ -321,7 +321,7 @@ function displayItemModal(itemId) {
     </picture>
     <h2 class="modal-menu-header">${item.name}</h2>
     <p class="modal-menu-price">${item.price} грн</p>
-    <p class="modal-menu-describe">Шинка, маслини, шампіньйони, помідори, сир Моцарела, соус бешамель</p>  
+    <p class="modal-menu-describe">${item.description}</p>  
     
 `;
 

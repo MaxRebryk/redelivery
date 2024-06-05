@@ -36,18 +36,17 @@ function cartCount() {
   const cartCounter = document.querySelector('.cart-counter');
   const orderStorage = localStorage.getItem('order');
   let orderArray = JSON.parse(orderStorage);
-  // Перевірка на наявність масиву
+
   if (orderArray) {
     cartCounter.textContent = orderArray.length;
   } else {
-    cartCounter.textContent = '0'; // Якщо масив порожній
+    cartCounter.textContent = '0';
   }
 }
 
 cartCount();
 
 function areLogin() {
-  // Перевіряємо, чи є користувач увійшов без очікування DOMContentLoaded
   const userLoggedIn = JSON.parse(localStorage.getItem('userLoggedIn'));
   if (userLoggedIn) {
     return true;
@@ -55,7 +54,6 @@ function areLogin() {
     window.location.href = './login.html';
   }
   console.log(userLoggedIn);
-  // Повертаємо true, якщо користувач увійшов, false в іншому випадку
 }
 
 areLogin();
