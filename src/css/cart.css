@@ -599,6 +599,11 @@ input[type="search"] {
     box-shadow: 4px 4px 20px 0px rgba(79, 74, 69, 0.25);
   }
 
+  .item-img {
+    width: 120px;
+    height: 93px;
+  }
+
   .item-info-container {
     display: flex;
     flex-direction: column;
